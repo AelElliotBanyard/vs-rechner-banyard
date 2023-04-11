@@ -6,7 +6,7 @@ const toNumber = (value: string) => {
   } else if (value === " ") {
     return Math.PI;
   }
-  const numericInput = value.toString().replace(/[^0-9.]/g, "");
+  const numericInput = parseFloat(value.toString().replace(/[^0-9.]/g, ""));
   return numericInput;
 };
 
