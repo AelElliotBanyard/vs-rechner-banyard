@@ -18,7 +18,7 @@ export default function Home() {
               auszahlen.
             </p>
             <p>
-              Diese Web-App wurde erstellt im Rahmen eines Pilot Projekts an der
+              Diese Web-App wurde erstellt im Rahmen eines Pilot Projekts an der{" "}
               <a href="https://www.bbw.ch/" target="_blank">
                 BBW
               </a>
