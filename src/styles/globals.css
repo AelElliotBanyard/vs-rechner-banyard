@@ -88,4 +88,20 @@
   .hausrat > .section > .pay > div > h2 {
     @apply font-bold text-xl border-b pb-2 border-opacity-50 border-b-gray-400;
   }
+
+  .numberInput {
+    @apply relative max-w-xs pt-4 my-2;
+  }
+  .numberInput-text {
+    @apply absolute -top-2 -z-10 transition-transform text-white;
+  }
+  .numberInput-input {
+    @apply bg-transparent border-green-500 w-full pl-2 border-b-2 focus-visible:outline-none text-white;
+  }
+  .numberInput-text.empty {
+    @apply translate-y-5;
+  }
+  .numberInput-input:focus-visible + .numberInput-text {
+    @apply translate-y-0;
+  }
 }

@@ -1,8 +1,14 @@
 import { NumberInputParams } from "@/types";
 import { toNumber, toOutString } from "@/utils/functions";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const NumberInput = ({ value, onChange, placeholder }: NumberInputParams) => {
+const NumberInput = ({
+  value,
+  onChange,
+  placeholder,
+  clear,
+  notEmpty,
+}: NumberInputParams) => {
   const [empty, setEmpty] = useState(true);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,16 +33,25 @@ const NumberInput = ({ value, onChange, placeholder }: NumberInputParams) => {
     onChange(toNumber(input));
   };
 
+  useEffect(() => {
+    if (clear) {
+      setEmpty(true);
+    }
+  }, [clear]);
+
   return (
-    <div>
+    <div className="numberInput">
       <input
         type="text"
         value={toOutString(value)}
         onFocus={($event) => toNumber($event.target.value)}
         onBlur={($event) => toOutString($event.target.value)}
         onChange={handleChange}
+        className="numberInput-input"
       />
-      <p>{placeholder}</p>
+      <p className={"numberInput-text " + (empty && !notEmpty ? "empty" : "")}>
+        {placeholder}
+      </p>
     </div>
   );
 };
