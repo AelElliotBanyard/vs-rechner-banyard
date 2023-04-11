@@ -20,7 +20,7 @@ const HausratSchaden = () => {
   const [own, setOwn] = useState(Math.PI);
   const [message, setMessage] = useState("");
 
-  const calc = (e: any) => {
+  const calc = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (vw != Math.PI && damage != Math.PI && vw != 0) {
       const calc = Math.round((vs / vw) * damage * 100) / 100;
@@ -36,7 +36,9 @@ const HausratSchaden = () => {
         setOwn(calcOwn);
       }
       if (vs > vw) {
-        setMessage("Du bist überversichert. Du kannst die Versicherungssumme reduzieren um Geld zu sparen.");
+        setMessage(
+          "Du bist überversichert. Du kannst die Versicherungssumme reduzieren um Geld zu sparen."
+        );
       } else if (vs < vw) {
         setMessage(
           "Du bist unterversichert. Du kannst die Versicherungssumme erhöhen um mehr zu versichern."
