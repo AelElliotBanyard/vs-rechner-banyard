@@ -10,7 +10,7 @@ const toNumber = (value: string) => {
   return numericInput;
 };
 
-const toOutString = (value: number) => {
+const toOutString = (value: number | string) => {
   let numericInput = value.toString().replace(/[^0-9.]/g, "");
   if (numericInput === Math.PI.toString()) {
     numericInput = "";
