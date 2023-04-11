@@ -120,4 +120,29 @@
   .textInput-input:focus-visible + .textInput-text {
     @apply translate-y-0;
   }
+
+  .schaden {
+    @apply w-full m-0 px-2 flex flex-col items-center grow;
+  }
+  .schaden > .section {
+    @apply w-3/4 px-6 flex flex-col items-center mt-4 border-2 border-gray-300 backdrop-blur-lg bg-gray-600 bg-opacity-40 rounded-md;
+  }
+  .schaden > .section > h1 {
+    @apply text-4xl text-white font-bold my-4;
+  }
+  .schaden > .section > .form {
+    @apply border-2 border-gray-300 px-6 flex flex-col justify-center items-center mb-4 py-4 rounded-md backdrop-blur-lg w-2/3 bg-gray-600 bg-opacity-40;
+  }
+  .schaden > .section > .results {
+    @apply border-2 border-gray-300 px-6 flex flex-col justify-center mb-4 py-4 rounded-md backdrop-blur-md  text-white w-2/3 bg-gray-600 bg-opacity-40;
+  }
+  .schaden > .section > .results > .result-item {
+    @apply flex gap-2;
+  }
+  .schaden > .section > .results > .result-item > h2 {
+    @apply font-bold;
+  }
+  .schaden > .section > .message {
+    @apply border-2 border-gray-300 text-white mb-4 w-2/3 h-[4.5rem] rounded-md p-2 backdrop-blur-md bg-gray-600 bg-opacity-40;
+  }
 }

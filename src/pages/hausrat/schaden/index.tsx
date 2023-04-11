@@ -49,11 +49,11 @@ const HausratSchaden = () => {
 
   return (
     <>
-      <main>
-        <div>
-          <div>
+      <main className="main">
+        <div className="schaden">
+          <div className="section">
             <h1>Schaden berechnen</h1>
-            <div>
+            <div className="form">
               <NumberInput
                 placeholder="Versicherungssumme"
                 value={vs}
@@ -77,8 +77,8 @@ const HausratSchaden = () => {
               />
               <button onClick={calc}>Berechnen</button>
             </div>
-            <div>
-              <div>
+            <div className="results">
+              <div className="result-item">
                 <h2>Entschädigung: </h2>
                 <p>
                   {result != Math.PI
@@ -92,7 +92,7 @@ const HausratSchaden = () => {
                     : ""}
                 </p>
               </div>
-              <div>
+              <div className="result-item">
                 <h2>Prozentuale Absicherung: </h2>
                 <p
                   className={percent >= 100 ? "text-green-500" : "text-red-500"}
@@ -104,7 +104,7 @@ const HausratSchaden = () => {
                     : ""}
                 </p>
               </div>
-              <div>
+              <div className="result-item">
                 <h2>Selbstbehalt:</h2>
                 <p>
                   {own != Math.PI
@@ -119,7 +119,7 @@ const HausratSchaden = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="message">
               <p>{message} </p>
             </div>
           </div>
