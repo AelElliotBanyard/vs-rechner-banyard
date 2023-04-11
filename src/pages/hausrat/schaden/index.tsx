@@ -47,6 +47,30 @@ const HausratSchaden = () => {
     }
   };
 
+  
+
+  const clear = () => {
+    setVs(Math.PI);
+    setVw(Math.PI);
+    setDamage(Math.PI);
+    setResult(Math.PI);
+    setPercent(Math.PI);
+    setOwn(Math.PI);
+    setMessage("");
+    setIsClear(true);
+    setNotEmpty({
+      vs: false,
+      vw: false,
+      damage: false,
+      compensation: false,
+      percentage: false,
+      excess: false,
+    });
+    setTimeout(() => {
+      setIsClear(false);
+    }, 1000);
+  };
+
   return (
     <>
       <main className="main">
@@ -75,7 +99,9 @@ const HausratSchaden = () => {
                 clear={isClear}
                 notEmpty={notEmpty.damage}
               />
-              <button onClick={calc} className="btn">Berechnen</button>
+              <button onClick={calc} className="btn">
+                Berechnen
+              </button>
             </div>
             <div className="results">
               <div className="result-item">
@@ -121,6 +147,11 @@ const HausratSchaden = () => {
             </div>
             <div className="message">
               <p>{message} </p>
+            </div>
+            <div className="buttons">
+              <button className="btn" onClick={clear}>
+                Zurücksetzen
+              </button>
             </div>
           </div>
         </div>
