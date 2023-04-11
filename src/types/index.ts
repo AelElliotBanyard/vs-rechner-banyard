@@ -5,3 +5,11 @@ export type NumberInputParams = {
   notEmpty: boolean;
   clear: boolean;
 };
+
+export type TextInputParams = {
+  value: string;
+  onChange: (value: string) => void;
+  placeholder: string;
+  notEmpty: boolean;
+  clear: boolean;
+};
