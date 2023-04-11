@@ -9,22 +9,22 @@ const Navigation = () => {
     {
       name: "Startseite",
       path: "/",
-      icon: <BsHouseFill />,
+      icon: <BsHouseFill className="navIcon" />,
     },
     {
       name: "Hausrat",
       path: "/hausrat",
-      icon: <FaHouseUser />,
+      icon: <FaHouseUser className="navIcon" />,
     },
     {
       name: "Schaden",
       path: "/hausrat/schaden",
-      icon: <FaHouseDamage />,
+      icon: <FaHouseDamage className="navIcon" />,
     },
     {
       name: "Versicherungssumme",
       path: "/hausrat/versicherungssumme",
-      icon: <BsCalculatorFill />,
+      icon: <BsCalculatorFill className="navIcon" />,
     },
   ];
   return (
