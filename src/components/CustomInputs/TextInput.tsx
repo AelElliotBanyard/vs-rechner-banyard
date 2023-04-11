@@ -26,13 +26,14 @@ const TextInput = ({
   }, [clear]);
 
   return (
-    <div>
+    <div className="textInput">
       <input
         type="text"
         value={value}
         onChange={handleChange}
+        className="textInput-input"
       />
-      <p>
+      <p className={"textInput-text " + (empty && !notEmpty ? "empty" : "")}>
         {placeholder}
       </p>
     </div>

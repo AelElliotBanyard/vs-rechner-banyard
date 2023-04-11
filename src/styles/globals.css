@@ -104,4 +104,20 @@
   .numberInput-input:focus-visible + .numberInput-text {
     @apply translate-y-0;
   }
+
+  .textInput {
+    @apply relative max-w-xs pt-4 my-2;
+  }
+  .textInput-text {
+    @apply absolute -top-2 -z-10 transition-transform text-white;
+  }
+  .textInput-input {
+    @apply bg-transparent border-green-500 w-full pl-2 border-b-2 focus-visible:outline-none text-white;
+  }
+  .textInput-text.empty {
+    @apply translate-y-5;
+  }
+  .textInput-input:focus-visible + .textInput-text {
+    @apply translate-y-0;
+  }
 }
