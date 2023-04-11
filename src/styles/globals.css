@@ -40,4 +40,24 @@
   .navigation > .navLinks > .linkParent.current > a.link > .navIcon {
     @apply stroke-white fill-white w-8 h-8;
   }
+
+  .main {
+    @apply grow flex;
+  }
+
+  .welcome {
+    @apply w-full m-0 px-2 flex flex-col items-center grow;
+  }
+  .welcome > .section {
+    @apply w-3/4 px-6 flex flex-col justify-center items-center my-4 border-2 border-gray-300 backdrop-blur-lg bg-gray-600 bg-opacity-40 rounded-md;
+  }
+  .welcome > .section > h1 {
+    @apply text-4xl text-white font-bold my-4;
+  }
+  .welcome > .section > p {
+    @apply text-xl text-white font-bold my-4 text-center;
+  }
+  .welcome > .section > p > a {
+    @apply text-xl text-blue-500 hover:border-b-2 hover:border-b-blue-500 font-bold my-4 text-center;
+  }
 }

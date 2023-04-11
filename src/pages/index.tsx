@@ -1,9 +1,9 @@
 export default function Home() {
   return (
     <>
-      <main>
-        <div>
-          <div>
+      <main className="main">
+        <div className="welcome">
+          <div className="section">
             <h1>Wilkommen!</h1>
             <p>
               Dies ist der Versicherungsrechner erstellt von{" "}
