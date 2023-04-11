@@ -145,4 +145,12 @@
   .schaden > .section > .message {
     @apply border-2 border-gray-300 text-white mb-4 w-2/3 h-[4.5rem] rounded-md p-2 backdrop-blur-md bg-gray-600 bg-opacity-40;
   }
+
+  
+  .btn {
+    @apply py-2 px-4 my-2 border-2 rounded-md border-green-500 text-white;
+  }
+  .btn:hover {
+    @apply bg-green-500 text-black border-green-600;
+  }
 }

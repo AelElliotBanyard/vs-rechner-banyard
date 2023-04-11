@@ -75,7 +75,7 @@ const HausratSchaden = () => {
                 clear={isClear}
                 notEmpty={notEmpty.damage}
               />
-              <button onClick={calc}>Berechnen</button>
+              <button onClick={calc} className="btn">Berechnen</button>
             </div>
             <div className="results">
               <div className="result-item">
