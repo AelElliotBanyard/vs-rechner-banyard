@@ -8,3 +8,8 @@
   </a>
 </p>
 
+
+
+Hi and Welcome!
+
+This is the GitHub repo for my Home insurance coverage and insurance sum calculator that can be found at [insurance.banyard.tech](https://insurance.banyard.tech).
