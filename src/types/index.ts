@@ -1,3 +1,5 @@
+import { type } from "os";
+
 export type NumberInputParams = {
   value: number;
   onChange: (value: number) => void;
@@ -13,3 +15,10 @@ export type TextInputParams = {
   notEmpty: boolean;
   clear: boolean;
 };
+
+export type Item = {
+  gegenstand: string;
+  wert: number;
+};
+
+export type Items = Item[];

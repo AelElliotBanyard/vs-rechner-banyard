@@ -1,5 +1,6 @@
 import NumberInput from "@/components/CustomInputs/NumberInput";
 import TextInput from "@/components/CustomInputs/TextInput";
+import { Item, Items } from "@/types";
 import { toOutString } from "@/utils/functions";
 import { useState } from "react";
 import { MdOutlineDeleteForever, MdAdd } from "react-icons/md";
@@ -30,11 +31,11 @@ const HausratVersicherungssumme = () => {
     if (items.length >= 1) {
       if (
         !items.find(
-          (item: any) => item.gegenstand === "" || item.wert === Math.PI
+          (item: Item) => item.gegenstand === "" || item.wert === Math.PI
         )
       ) {
         var tvw = 0;
-        items.forEach((item: any) => {
+        items.forEach((item: Item) => {
           tvw += parseFloat(item.wert.toString());
         });
         setVw(tvw);
@@ -112,7 +113,7 @@ const HausratVersicherungssumme = () => {
 
   const addItem = () => {
     if (items.length >= 1) {
-      setItems((prevArr: any) => {
+      setItems((prevArr: Items) => {
         const result = [...prevArr];
         result.push({
           gegenstand: "",
@@ -168,16 +169,16 @@ const HausratVersicherungssumme = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {items.map((item: any, index: any) => {
-                      const setGegenstand = (e: any) => {
-                        setItems((prevArr: any) => {
+                    {items.map((item: Item, index: number) => {
+                      const setGegenstand = (e: string) => {
+                        setItems((prevArr: Items) => {
                           const result = [...prevArr];
-                          result[index].gegenstand = e.target.value;
+                          result[index].gegenstand = e;
                           return result;
                         });
                       };
-                      const setWert = (e: any) => {
-                        setItems((prevArr: any) => {
+                      const setWert = (e: number) => {
+                        setItems((prevArr: Items) => {
                           const result = [...prevArr];
                           result[index].wert = e;
                           return result;
@@ -207,7 +208,7 @@ const HausratVersicherungssumme = () => {
                             <button
                               className="btn"
                               onClick={() => {
-                                setItems((prevArr: any) => {
+                                setItems((prevArr: Items) => {
                                   const result = [...prevArr];
                                   const newArr = result.filter(
                                     (e, i) => e !== item && index != i
