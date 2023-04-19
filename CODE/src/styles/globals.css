@@ -23,7 +23,7 @@
     @apply flex gap-2 items-center text-white font-bold;
   }
   .navigation > .navLogo .logo {
-    @apply stroke-white fill-white;
+    @apply h-16;
   }
   .navigation > .navLinks {
     @apply flex gap-2 items-center text-white font-bold;

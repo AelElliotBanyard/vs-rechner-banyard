@@ -32,7 +32,7 @@ const Navigation = () => {
       <nav className="navigation">
         <div className="navLogo">
           <Link href="/">
-            <p>Logo</p>
+            <img src="/logo-big-dark-transparent.png" alt="Logo" className="logo" />
           </Link>
         </div>
         <div className="navLinks">
