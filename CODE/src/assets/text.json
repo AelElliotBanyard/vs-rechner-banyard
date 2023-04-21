@@ -1,4 +1,18 @@
 {
+  "header": [
+    {
+      "locale": "de-DE",
+      "title": "Hausratversicherung Rechner | banyard.tech"
+    },
+    {
+      "locale": "en-GB",
+      "title": "Household Insurance Calculator | banyard.tech"
+    },
+    {
+      "locale": "fr-FR",
+      "title": "Calculateur d'assurance habitation | banyard.tech"
+    }
+  ],
   "welcome": [
     {
       "locale": "de-DE",
@@ -510,7 +524,6 @@
       }
     }
   ],
-
   "vsumme": [
     {
       "locale": "de-DE",
