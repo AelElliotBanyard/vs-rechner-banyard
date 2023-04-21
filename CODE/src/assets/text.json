@@ -36,11 +36,11 @@
         },
         {
           "name": "Schaden",
-          "path": "/schaden"
+          "path": "/hausrat/schaden"
         },
         {
           "name": "Versicherungssumme",
-          "path": "/versicherungssumme"
+          "path": "/hausrat/versicherungssumme"
         }
       ]
     },
@@ -57,11 +57,11 @@
         },
         {
           "name": "Damage",
-          "path": "/schaden"
+          "path": "/hausrat/schaden"
         },
         {
           "name": "Insurance Sum",
-          "path": "/versicherungssumme"
+          "path": "/hausrat/versicherungssumme"
         }
       ]
     },
@@ -78,11 +78,11 @@
         },
         {
           "name": "Calcul des dommages",
-          "path": "/schaden"
+          "path": "/hausrat/schaden"
         },
         {
           "name": "Somme d'assurance",
-          "path": "/versicherungssumme"
+          "path": "/hausrat/versicherungssumme"
         }
       ]
     }
