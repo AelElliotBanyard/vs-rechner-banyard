@@ -1,24 +1,24 @@
+import { useRouter } from "next/router";
+import text from "../assets/text.json";
+
 export default function Home() {
+  const { locale } = useRouter();
   return (
     <>
       <main className="main">
         <div className="welcome">
           <div className="section">
-            <h1>Wilkommen!</h1>
+            <h1>{text.welcome.filter((p) => p.locale === locale)[0].title}</h1>
             <p>
-              Dies ist der Versicherungsrechner erstellt von{" "}
+              {text.welcome.filter((p) => p.locale === locale)[0].createdBy}
               <a href="https://github.com/AelElliotBanyard" target="_blank">
                 Ael Banyard
               </a>
               .
             </p>
+            <p>{text.welcome.filter((p) => p.locale === locale)[0].state}</p>
             <p>
-              Er ist noch in der Entwicklung, aber Sie können schon jetzt
-              berechnen was ihre Hausratsversicherung im Falle von einem Schaden
-              auszahlen.
-            </p>
-            <p>
-              Diese Web-App wurde erstellt im Rahmen eines Pilot Projekts an der{" "}
+              {text.welcome.filter((p) => p.locale === locale)[0].why}
               <a href="https://www.bbw.ch/" target="_blank">
                 BBW
               </a>
