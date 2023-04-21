@@ -21,5 +21,70 @@
       "state": "Il est toujours en développement, mais vous pouvez déjà calculer ce que votre assurance habitation paierait en cas de réclamation.",
       "why": "Cette application web a été créée dans le cadre d'un projet pilote à la "
     }
+  ],
+  "nav": [
+    {
+      "locale": "de-DE",
+      "routes": [
+        {
+          "name": "Startseite",
+          "path": "/"
+        },
+        {
+          "name": "Hausrat",
+          "path": "/hausrat"
+        },
+        {
+          "name": "Schaden",
+          "path": "/schaden"
+        },
+        {
+          "name": "Versicherungssumme",
+          "path": "/versicherungssumme"
+        }
+      ]
+    },
+    {
+      "locale": "en-GB",
+      "routes": [
+        {
+          "name": "Home",
+          "path": "/"
+        },
+        {
+          "name": "Household",
+          "path": "/hausrat"
+        },
+        {
+          "name": "Damage",
+          "path": "/schaden"
+        },
+        {
+          "name": "Insurance Sum",
+          "path": "/versicherungssumme"
+        }
+      ]
+    },
+    {
+      "locale": "fr-FR",
+      "routes": [
+        {
+          "name": "Accueil",
+          "path": "/"
+        },
+        {
+          "name": "Ménage",
+          "path": "/hausrat"
+        },
+        {
+          "name": "Calcul des dommages",
+          "path": "/schaden"
+        },
+        {
+          "name": "Somme d'assurance",
+          "path": "/versicherungssumme"
+        }
+      ]
+    }
   ]
 }
