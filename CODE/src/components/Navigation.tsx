@@ -50,7 +50,7 @@ const Navigation = () => {
           {locales
             ? locales.map((l, i) => {
                 return (
-                  <span key={i}>
+                  <span key={i} className={l === locale ? "active": ""}>
                     <Link
                       href={asPath}
                       locale={l}

@@ -43,6 +43,9 @@
   .navigation > .navLang {
     @apply flex gap-2 items-center text-white font-bold ml-auto mr-2;
   }
+  .navigation > .navLang > .active {
+    @apply border-b-2 border-white;
+  }
 
   .main {
     @apply grow flex;
