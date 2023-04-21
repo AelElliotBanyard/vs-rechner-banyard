@@ -7,6 +7,7 @@ module.exports = {
         "leaf-pattern": "url('/images/leaf-pattern.png')",
         "bauhaus-fade": "url('/images/bauhaus-m-fade.png')",
         "triangles-fade": "url('/images/triangles-fade.png')",
+        "circles-fade": "url('/images/circles-fade.png')",
       }
     },
   },
