@@ -1,3 +1,4 @@
+import CustomAlert from "@/components/CustomAlert";
 import NumberInput from "@/components/CustomInputs/NumberInput";
 import { toOutString } from "@/utils/functions";
 import { useState } from "react";
@@ -19,6 +20,12 @@ const HausratSchaden = () => {
   const [percent, setPercent] = useState(Math.PI);
   const [own, setOwn] = useState(Math.PI);
   const [message, setMessage] = useState("");
+  const [error, setError] = useState({
+    message: "Success",
+    type: "success",
+    fill: false,
+  });
+  const [open, setOpen] = useState(false);
 
   const calc = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -46,10 +53,35 @@ const HausratSchaden = () => {
       } else {
         setMessage("Genau richtig versichert");
       }
+    } else {
+      if (vw == 0) {
+        setError({
+          message: "Der Versicherungswert darf nicht 0 sein.",
+          type: "warning",
+          fill: false,
+        });
+      } else if (vw == Math.PI && damage != Math.PI) {
+        setError({
+          message: "Der Versicherungswert darf nicht leer sein.",
+          type: "warning",
+          fill: false,
+        });
+      } else if (vw != Math.PI && damage == Math.PI) {
+        setError({
+          message: "Du must einen Schaden haben.",
+          type: "warning",
+          fill: false,
+        });
+      } else {
+        setError({
+          message: "Bitte alle Felder ausfüllen.",
+          type: "error",
+          fill: true,
+        });
+      }
+      setOpen(true);
     }
   };
-
-  
 
   const clear = () => {
     setVs(Math.PI);
@@ -75,6 +107,13 @@ const HausratSchaden = () => {
 
   return (
     <>
+      <CustomAlert
+        message={error.message}
+        type={error.type}
+        fill={error.fill}
+        open={open}
+        close={() => setOpen(false)}
+      />
       <main className="main">
         <div className="schaden">
           <div className="section">
