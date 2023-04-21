@@ -1,2 +1,25 @@
 {
+  "welcome": [
+    {
+      "locale": "de-DE",
+      "title": "Wilkommen!",
+      "createdBy": "Dies ist der Versicherungsrechner erstellt von ",
+      "state": "Er ist noch in der Entwicklung, aber Sie können schon jetzt berechnen was ihre Hausratsversicherung im Falle von einem Schaden auszahlen.",
+      "why": "Diese Web-App wurde erstellt im Rahmen eines Pilot Projekts an der "
+    },
+    {
+      "locale": "en-GB",
+      "title": "Welcome!",
+      "createdBy": "This is the insurance calculator created by ",
+      "state": "It is still in development, but you can already calculate what your home insurance would pay out in case of a claim.",
+      "why": "This web app was created as part of a pilot project at the "
+    },
+    {
+      "locale": "fr-FR",
+      "title": "Bienvenue!",
+      "createdBy": "Ceci est le calculateur d'assurance créé par ",
+      "state": "Il est toujours en développement, mais vous pouvez déjà calculer ce que votre assurance habitation paierait en cas de réclamation.",
+      "why": "Cette application web a été créée dans le cadre d'un projet pilote à l'"
+    }
+  ]
 }
