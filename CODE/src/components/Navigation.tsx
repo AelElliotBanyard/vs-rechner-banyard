@@ -2,31 +2,11 @@ import Link from "next/link";
 import { FaHouseDamage, FaHouseUser } from "react-icons/fa";
 import { BsCalculatorFill, BsHouseFill } from "react-icons/bs";
 import { useRouter } from "next/router";
+import text from "../assets/text.json";
 
 const Navigation = () => {
   const { locale, locales, asPath } = useRouter();
-  let routes = [
-    {
-      name: "Startseite",
-      path: "/",
-      icon: <BsHouseFill className="navIcon" />,
-    },
-    {
-      name: "Hausrat",
-      path: "/hausrat",
-      icon: <FaHouseUser className="navIcon" />,
-    },
-    {
-      name: "Schaden",
-      path: "/hausrat/schaden",
-      icon: <FaHouseDamage className="navIcon" />,
-    },
-    {
-      name: "Versicherungssumme",
-      path: "/hausrat/versicherungssumme",
-      icon: <BsCalculatorFill className="navIcon" />,
-    },
-  ];
+  let routes = text.nav.filter((p) => p.locale === locale)[0].routes;
   return (
     <>
       <nav className="navigation">
@@ -49,7 +29,18 @@ const Navigation = () => {
                 }
               >
                 <Link className="link" href={route.path}>
-                  {route.icon} {route.name}
+                  {route.path === "/" ? (
+                    <BsHouseFill className="navIcon" />
+                  ) : route.path === "/hausrat" ? (
+                    <FaHouseUser className="navIcon" />
+                  ) : route.path === "/hausrat/schaden" ? (
+                    <FaHouseDamage className="navIcon" />
+                  ) : route.path === "/hausrat/versicherungssumme" ? (
+                    <BsCalculatorFill className="navIcon" />
+                  ) : (
+                    ""
+                  )}{" "}
+                  {route.name}
                 </Link>
               </p>
             );
