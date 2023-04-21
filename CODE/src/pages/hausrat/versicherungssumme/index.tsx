@@ -5,8 +5,13 @@ import { Item, Items } from "@/types";
 import { toOutString } from "@/utils/functions";
 import { useState } from "react";
 import { MdOutlineDeleteForever, MdAdd } from "react-icons/md";
+import content from "../../../assets/text.json";
+import { useRouter } from "next/router";
+
 
 const HausratVersicherungssumme = () => {
+  const { locale } = useRouter();
+  let text = content.vsumme.filter((p) => p.locale === locale)[0];
   const [items, setItems] = useState([
     {
       gegenstand: "",
@@ -65,8 +70,7 @@ const HausratVersicherungssumme = () => {
           vw: false,
         });
         setError({
-          message:
-            "Bitte allen Gegenstände einen Wert und eine Beschreibung geben",
+          message: text.errors.null,
           type: "error",
           fill: true,
         });
@@ -87,7 +91,7 @@ const HausratVersicherungssumme = () => {
         items: false,
       });
       setError({
-        message: "Bitte mindestens einen Gegenstand eingeben",
+        message: text.errors.min,
         type: "error",
         fill: true,
       });
@@ -129,7 +133,7 @@ const HausratVersicherungssumme = () => {
       ]);
       setItemsIsClear(true);
       setError({
-        message: "Bitte Quadratmeter eingeben",
+        message: text.errors.sqr,
         type: "error",
         fill: true,
       });
@@ -185,14 +189,14 @@ const HausratVersicherungssumme = () => {
       <main className="main">
         <div className="summe">
           <div className="section">
-            <h1>Versicherungssumme berechnen</h1>
+            <h1>{text.title}</h1>
             <div className="forms">
               <div className="form">
                 <table className="table">
                   <thead>
                     <tr className="header">
                       <th className="title" colSpan={2}>
-                        Liste von Gegenständen
+                        {text.list}
                       </th>
                       <th className="button">
                         <button className="btn" onClick={addItem}>
@@ -221,7 +225,7 @@ const HausratVersicherungssumme = () => {
                         <tr key={index} className="item">
                           <td className="inputs">
                             <TextInput
-                              placeholder={"Gegenstand"}
+                              placeholder={text.item}
                               value={item.gegenstand}
                               onChange={setGegenstand}
                               clear={itemsIsClear}
@@ -230,7 +234,7 @@ const HausratVersicherungssumme = () => {
                           </td>
                           <td className="inputs">
                             <NumberInput
-                              placeholder={"Wert"}
+                              placeholder={text.value}
                               value={item.wert}
                               onChange={setWert}
                               clear={itemsIsClear}
@@ -259,13 +263,13 @@ const HausratVersicherungssumme = () => {
                   </tbody>
                 </table>
                 <button onClick={calcItems} className="btn">
-                  Berechnen
+                  {text.calc}
                 </button>
               </div>
               <div className="form">
                 <div className="sqr">
                   <NumberInput
-                    placeholder={"Quadratmeter"}
+                    placeholder={text.sqrMeters}
                     value={squareMetres}
                     onChange={setSquareMetres}
                     clear={sqrIsClear}
@@ -273,7 +277,7 @@ const HausratVersicherungssumme = () => {
                   />
 
                   <NumberInput
-                    placeholder={"Pauschalbetrag (700 CHF Standart)"}
+                    placeholder={text.flatRatePlaceHolder}
                     value={flatRate}
                     onChange={setFlatRate}
                     clear={sqrIsClear}
@@ -283,13 +287,13 @@ const HausratVersicherungssumme = () => {
                   />
                 </div>
                 <button onClick={calcSqr} className="btn">
-                  Berechnen
+                  {text.calc}
                 </button>
               </div>
             </div>
             <div className="results">
               <div className="result-item">
-                <h2>Versicherungswert: </h2>
+                <h2>{text.vw}: </h2>
                 <p>
                   {vw != Math.PI &&
                   vw != Math.PI * flatRate &&
@@ -303,7 +307,7 @@ const HausratVersicherungssumme = () => {
                 </p>
               </div>
               <div className="result-item">
-                <h2>Versicherungssumme: </h2>
+                <h2>{text.vs}: </h2>
                 <p>
                   {vs != Math.PI &&
                   vs != Math.PI * 1.1 &&
@@ -322,7 +326,7 @@ const HausratVersicherungssumme = () => {
             </div>
             <div className="buttons">
               <button className="btn" onClick={clear}>
-                Zurücksetzen
+                {text.reset}
               </button>
             </div>
           </div>
