@@ -87,7 +87,6 @@
       ]
     }
   ],
-
   "household": [
     {
       "locale": "de-DE",
@@ -437,6 +436,77 @@
             }
           ]
         }
+      }
+    }
+  ],
+  "damage": [
+    {
+      "locale": "de-DE",
+      "title": "Schaden berechnen",
+      "vs": "Versicherungssumme",
+      "vw": "Versicherungswert",
+      "damage": "Schaden",
+      "calc": "Berechnen",
+      "compensation": "Entschädigung",
+      "percent": "Prozentuale Absicherung",
+      "excess": "Selbstbehalt",
+      "reset": "Zurücksetzen",
+      "messages": {
+        "over": "Du bist überversichert. Du kannst die Versicherungssumme reduzieren um Geld zu sparen.",
+        "under": "Du bist unterversichert. Du kannst die Versicherungssumme erhöhen um mehr zu versichern.",
+        "perfect": "Genau richtig versichert"
+      },
+      "errors": {
+        "vw0": "Der Versicherungswert darf nicht 0 sein.",
+        "vwEmpty": "Der Versicherungswert darf nicht leer sein.",
+        "damage": "Du must einen Schaden haben.",
+        "fillEverything": "Bitte alle Felder ausfüllen."
+      }
+    },
+    {
+      "locale": "en-GB",
+      "title": "Calculate damage",
+      "vs": "Insurance sum",
+      "vw": "Insured value",
+      "damage": "Damage",
+      "calc": "Calculate",
+      "compensation": "Compensation",
+      "percent": "Percentage coverage",
+      "excess": "Excess",
+      "reset": "Reset",
+      "messages": {
+        "over": "You are overinsured. You can reduce the insurance sum to save money.",
+        "under": "You are underinsured. You can increase the insurance sum to have more coverage.",
+        "perfect": "Perfectly insured"
+      },
+      "errors": {
+        "vw0": "The insured value cannot be 0.",
+        "vwEmpty": "The insured value cannot be empty.",
+        "damage": "You must have a damage.",
+        "fillEverything": "Please fill out all fields."
+      }
+    },
+    {
+      "locale": "fr-FR",
+      "title": "Calcul des dommages",
+      "vs": "Somme assurée",
+      "vw": "Valeur de l'assurance",
+      "damage": "Dommages",
+      "calc": "Calculer",
+      "compensation": "Indemnisation",
+      "percent": "Couverture en pourcentage",
+      "excess": "Franchise",
+      "reset": "Réinitialiser",
+      "messages": {
+        "over": "Vous êtes sur-assuré. Vous pouvez réduire la somme assurée pour économiser de l'argent.",
+        "under": "Vous êtes sous-assuré. Vous pouvez augmenter la somme assurée pour être mieux couvert.",
+        "perfect": "Assuré correctement"
+      },
+      "errors": {
+        "vw0": "La valeur de l'assurance ne peut pas être nulle.",
+        "vwEmpty": "La valeur de l'assurance ne peut pas être vide.",
+        "damage": "Vous devez avoir des dommages.",
+        "fillEverything": "Veuillez remplir tous les champs."
       }
     }
   ]
