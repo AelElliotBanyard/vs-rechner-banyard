@@ -509,5 +509,62 @@
         "fillEverything": "Veuillez remplir tous les champs."
       }
     }
+  ],
+
+  "vsumme": [
+    {
+      "locale": "de-DE",
+      "title": "Versicherungssumme berechnen",
+      "list": "Liste von Gegenständen",
+      "item": "Gegenstand",
+      "value": "Wert",
+      "calc": "Berechnen",
+      "reset": "Zurücksetzen",
+      "sqrMeters": "Quadratmeter",
+      "flatRatePlaceHolder": "Pauschalbetrag (700 CHF Standart)",
+      "vw": "Versicherungswert",
+      "vs": "Versicherungssumme",
+      "errors": {
+        "null": "Bitte allen Gegenstände einen Wert und eine Beschreibung geben",
+        "min": "Bitte mindestens einen Gegenstand eingeben",
+        "sqr": "Bitte Quadratmeter eingeben"
+      }
+    },
+    {
+      "locale": "en-GB",
+      "title": "Calculate insurance sum",
+      "list": "List of items",
+      "item": "Item",
+      "value": "Value",
+      "calc": "Calculate",
+      "sqrMeters": "Square meters",
+      "reset": "Reset",
+      "flatRatePlaceHolder": "Flat rate (700 CHF standard)",
+      "vw": "Insured value",
+      "vs": "Insurance sum",
+      "errors": {
+        "null": "Please provide a value and a description for all items",
+        "min": "Please enter at least one item",
+        "sqr": "Please enter square meters"
+      }
+    },
+    {
+      "locale": "fr-FR",
+      "title": "Calcul de la somme assurée",
+      "list": "Liste d'articles",
+      "item": "Article",
+      "value": "Valeur",
+      "calc": "Calculer",
+      "reset": "Réinitialiser",
+      "sqrMeters": "Mètres carrés",
+      "flatRatePlaceHolder": "Forfait (700 CHF standard)",
+      "vw": "Valeur de l'assurance",
+      "vs": "Somme assurée",
+      "errors": {
+        "null": "Veuillez donner une valeur et une description à tous les articles",
+        "min": "Veuillez entrer au moins un article",
+        "sqr": "Veuillez entrer les mètres carrés"
+      }
+    }
   ]
 }
