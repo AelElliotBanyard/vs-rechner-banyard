@@ -2,8 +2,12 @@ import CustomAlert from "@/components/CustomAlert";
 import NumberInput from "@/components/CustomInputs/NumberInput";
 import { toOutString } from "@/utils/functions";
 import { useState } from "react";
+import content from "../../../assets/text.json";
+import { useRouter } from "next/router";
 
 const HausratSchaden = () => {
+  const { locale } = useRouter();
+  let text = content.damage.filter((p) => p.locale === locale)[0];
   const [vs, setVs] = useState(Math.PI);
   const [vw, setVw] = useState(Math.PI);
   const [damage, setDamage] = useState(Math.PI);
@@ -43,38 +47,34 @@ const HausratSchaden = () => {
         setOwn(calcOwn);
       }
       if (vs > vw) {
-        setMessage(
-          "Du bist überversichert. Du kannst die Versicherungssumme reduzieren um Geld zu sparen."
-        );
+        setMessage(text.messages.over);
       } else if (vs < vw) {
-        setMessage(
-          "Du bist unterversichert. Du kannst die Versicherungssumme erhöhen um mehr zu versichern."
-        );
+        setMessage(text.messages.under);
       } else {
-        setMessage("Genau richtig versichert");
+        setMessage(text.messages.perfect);
       }
     } else {
       if (vw == 0) {
         setError({
-          message: "Der Versicherungswert darf nicht 0 sein.",
+          message: text.errors.vw0,
           type: "warning",
           fill: false,
         });
       } else if (vw == Math.PI && damage != Math.PI) {
         setError({
-          message: "Der Versicherungswert darf nicht leer sein.",
+          message: text.errors.vwEmpty,
           type: "warning",
           fill: false,
         });
       } else if (vw != Math.PI && damage == Math.PI) {
         setError({
-          message: "Du must einen Schaden haben.",
+          message: text.errors.damage,
           type: "warning",
           fill: false,
         });
       } else {
         setError({
-          message: "Bitte alle Felder ausfüllen.",
+          message: text.errors.fillEverything,
           type: "error",
           fill: true,
         });
@@ -117,36 +117,36 @@ const HausratSchaden = () => {
       <main className="main">
         <div className="schaden">
           <div className="section">
-            <h1>Schaden berechnen</h1>
+            <h1>{text.title}</h1>
             <div className="form">
               <NumberInput
-                placeholder="Versicherungssumme"
+                placeholder={text.vs}
                 value={vs}
                 onChange={setVs}
                 clear={isClear}
                 notEmpty={notEmpty.vs}
               />
               <NumberInput
-                placeholder="Versicherungswert"
+                placeholder={text.vw}
                 value={vw}
                 onChange={setVw}
                 clear={isClear}
                 notEmpty={notEmpty.vw}
               />
               <NumberInput
-                placeholder="Schaden"
+                placeholder={text.damage}
                 value={damage}
                 onChange={setDamage}
                 clear={isClear}
                 notEmpty={notEmpty.damage}
               />
               <button onClick={calc} className="btn">
-                Berechnen
+                {text.calc}
               </button>
             </div>
             <div className="results">
               <div className="result-item">
-                <h2>Entschädigung: </h2>
+                <h2>{text.compensation}: </h2>
                 <p>
                   {result != Math.PI
                     ? toOutString(
@@ -160,7 +160,7 @@ const HausratSchaden = () => {
                 </p>
               </div>
               <div className="result-item">
-                <h2>Prozentuale Absicherung: </h2>
+                <h2>{text.percent}: </h2>
                 <p
                   className={percent >= 100 ? "text-green-500" : "text-red-500"}
                 >
@@ -172,7 +172,7 @@ const HausratSchaden = () => {
                 </p>
               </div>
               <div className="result-item">
-                <h2>Selbstbehalt:</h2>
+                <h2>{text.excess}:</h2>
                 <p>
                   {own != Math.PI
                     ? toOutString(
@@ -191,7 +191,7 @@ const HausratSchaden = () => {
             </div>
             <div className="buttons">
               <button className="btn" onClick={clear}>
-                Zurücksetzen
+                {text.reset}
               </button>
             </div>
           </div>
