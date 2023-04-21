@@ -1,3 +1,4 @@
+import CustomAlert from "@/components/CustomAlert";
 import NumberInput from "@/components/CustomInputs/NumberInput";
 import TextInput from "@/components/CustomInputs/TextInput";
 import { Item, Items } from "@/types";
@@ -25,6 +26,12 @@ const HausratVersicherungssumme = () => {
     vs: false,
     vw: false,
   });
+  const [error, setError] = useState({
+    message: "Success",
+    type: "success",
+    fill: false,
+  });
+  const [open, setOpen] = useState(false);
 
   const calcItems = () => {
     setItemsIsClear(false);
@@ -57,6 +64,13 @@ const HausratVersicherungssumme = () => {
           vs: false,
           vw: false,
         });
+        setError({
+          message:
+            "Bitte allen Gegenstände einen Wert und eine Beschreibung geben",
+          type: "error",
+          fill: true,
+        });
+        setOpen(true);
       }
     } else {
       setVw(Math.PI);
@@ -72,6 +86,12 @@ const HausratVersicherungssumme = () => {
         vw: false,
         items: false,
       });
+      setError({
+        message: "Bitte mindestens einen Gegenstand eingeben",
+        type: "error",
+        fill: true,
+      });
+      setOpen(true);
     }
   };
 
@@ -108,6 +128,12 @@ const HausratVersicherungssumme = () => {
         },
       ]);
       setItemsIsClear(true);
+      setError({
+        message: "Bitte Quadratmeter eingeben",
+        type: "error",
+        fill: true,
+      });
+      setOpen(true);
     }
   };
 
@@ -149,6 +175,13 @@ const HausratVersicherungssumme = () => {
 
   return (
     <>
+      <CustomAlert
+        message={error.message}
+        type={error.type}
+        fill={error.fill}
+        open={open}
+        close={() => setOpen(false)}
+      />
       <main className="main">
         <div className="summe">
           <div className="section">
