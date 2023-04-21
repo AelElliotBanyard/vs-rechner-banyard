@@ -46,7 +46,7 @@
   }
 
   .welcome {
-    @apply w-full m-0 px-2 flex flex-col items-center grow;
+    @apply w-full m-0 px-2 flex flex-col items-center grow bg-leaf-pattern bg-no-repeat bg-cover bg-center;
   }
   .welcome > .section {
     @apply w-3/4 px-6 flex flex-col justify-center items-center my-4 border-2 border-gray-300 backdrop-blur-lg bg-gray-600 bg-opacity-40 rounded-md;
@@ -148,7 +148,7 @@
   .schaden > .section > .buttons {
     @apply flex gap-2 justify-center items-center w-2/3 bg-gray-600 bg-opacity-40 rounded-md backdrop-blur-md mb-4 border-2 border-gray-300;
   }
-  
+
   .btn {
     @apply py-2 px-4 my-2 border-2 rounded-md border-green-500 text-white;
   }
@@ -201,5 +201,4 @@
   .summe > .section > .buttons {
     @apply flex gap-2 justify-center items-center w-2/3 bg-gray-600 bg-opacity-40 rounded-md backdrop-blur-md mb-4 border-2 border-gray-300;
   }
-
 }
