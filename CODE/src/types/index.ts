@@ -1,5 +1,3 @@
-import { type } from "os";
-
 export type NumberInputParams = {
   value: number;
   onChange: (value: number) => void;
@@ -24,9 +22,9 @@ export type Item = {
 export type Items = Item[];
 
 export type CustomAlertParams = {
-  type: "success" | "error" | "warning",
-  open: boolean,
-  fill: boolean,
-  message: string,
-  close: () => void,
-}
+  type: "success" | "error" | "warning" | string;
+  open: boolean;
+  fill: boolean;
+  message: string;
+  close: () => void;
+};
