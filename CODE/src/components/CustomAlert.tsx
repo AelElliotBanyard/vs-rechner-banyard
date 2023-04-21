@@ -1,4 +1,6 @@
 import { CustomAlertParams } from "@/types";
+import content from "../assets/text.json";
+import { useRouter } from "next/router";
 
 const CustomAlert = ({
   type,
@@ -7,6 +9,8 @@ const CustomAlert = ({
   message,
   close,
 }: CustomAlertParams) => {
+  const { locale } = useRouter();
+  let text = content.customAlert.filter((p) => p.locale === locale)[0];
   return (
     <div
       className={
@@ -30,10 +34,10 @@ const CustomAlert = ({
         <div className="p-4 border-b-2">
           <p className="font-bold text-white">
             {type === "success"
-              ? "Erfolg"
+              ? text.type.success
               : type === "warning"
-              ? "Warnung"
-              : "Fehler"}
+              ? text.type.warning
+              : text.type.error}
           </p>
         </div>
         <p className="p-4 text-white">{message}</p>
