@@ -86,5 +86,358 @@
         }
       ]
     }
+  ],
+
+  "household": [
+    {
+      "locale": "de-DE",
+      "title": "Hausratversicherung",
+      "what": {
+        "title": "Was ist eine Hausratversicherung?",
+        "text": [
+          {
+            "string": "Eine Hausratversicherung ",
+            "bold": false
+          },
+          {
+            "string": "versichert Schäden an Ihrem Hausrat",
+            "bold": true
+          },
+          {
+            "string": ", die durch Feuer, Diebstahl, Wasser oder Elementarereignisse entstanden sind. Als Hausrat gelten ",
+            "bold": false
+          },
+          {
+            "string": "bewegliche Sachen",
+            "bold": true
+          },
+          {
+            "string": " in der Wohnung oder im Haus – inkl. Keller, Garage, Estrich, Garten oder Balkon.",
+            "bold": false
+          }
+        ]
+      },
+      "whatIsCovered": {
+        "title": "Folgende Gegenstände sind im Normalfall versichert:",
+        "list": [
+          "Möbel",
+          "Elektrogeräte",
+          "Kleidung",
+          "Schmuck, Uhren und andere Wertsachen",
+          "Vorhänge, Vasen, Teppiche",
+          "Sportartikel wie Velos und Ski",
+          "weitere Einrichtungsgegenstände"
+        ]
+      },
+      "pay": {
+        "does": {
+          "title": "Welche Schäden zahlt die Hausratversicherung?",
+          "text": [
+            {
+              "string": "Abgedeckt sind Schäden am Hausrat durch ",
+              "bold": false
+            },
+            {
+              "string": "Feuer, Wasser, Elementarereignisse wie etwa Sturmtiefs und Einbruchdiebstahl.",
+              "bold": true
+            },
+            {
+              "string": " Zusätzlich können Sie ",
+              "bold": false
+            },
+            {
+              "string": "Glasbruchschäden oder den einfachen Diebstahl ausserhalb der Wohnung",
+              "bold": true
+            },
+            {
+              "string": " versichern. Auch ",
+              "bold": false
+            },
+            {
+              "string": "anderweitige Kosten und Umtriebe",
+              "bold": true
+            },
+            {
+              "string": " als Folge eines Schadensfalls sind mitversichert. Dazu zählen etwa Kosten für den Ersatz der Schlösser, Hotelübernachtungen oder Aufräum-, Reinigungs- und Entsorgungsarbeiten.",
+              "bold": false
+            }
+          ]
+        },
+        "doesNot": {
+          "title": "Welche Schäden zahlt die Hausratversicherung nicht?",
+          "text": [
+            {
+              "string": "Grundsätzlich gilt: Die ",
+              "bold": false
+            },
+            {
+              "string": "Deckung der Hausratversicherung variiert",
+              "bold": true
+            },
+            {
+              "string": " je nach Police. Prüfen Sie deshalb die Ausschlüsse in den Allgemeinen Versicherungsbedingungen. In den meisten Fällen sind Ereignisse im Zusammenhang mit Krieg, inneren Unruhen und Atomkraft von der Versicherung ausgeschlossen. Auch Schäden, die Sie mit Absicht herbeiführen, sind von der Hausratversicherung nicht gedeckt. Für Schäden am Eigentum von Dritten brauchen Sie eine ",
+              "bold": false
+            },
+            {
+              "string": "Privathaftpflichtversicherung",
+              "bold": true
+            },
+            {
+              "string": ".",
+              "bold": false
+            }
+          ]
+        },
+        "you": {
+          "title": "Was muss ich selbst zahlen?",
+          "text": [
+            {
+              "string": "Bei der Hausratversicherung reicht die Spanne des Selbstbehalts üblicherweise ",
+              "bold": false
+            },
+            {
+              "string": "von 200 bis 500 Franken",
+              "bold": true
+            },
+            {
+              "string": ". Der Selbstbehalt wird von der Schadenssumme abgezogen. Ihn müssen Sie selbst bezahlen. Tipp: Achten Sie darauf, dass Sie den Selbstbehalt und die Deckungen an Ihre aktuellen Lebensumstände anpassen. So stellen Sie sicher, dass Sie nicht zu viel bezahlen oder unterversichert sind.",
+              "bold": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "locale": "en-GB",
+      "title": "Household insurance",
+      "what": {
+        "title": "What is household insurance?",
+        "text": [
+          {
+            "string": "Household insurance ",
+            "bold": false
+          },
+          {
+            "string": "covers damages to your household items",
+            "bold": true
+          },
+          {
+            "string": ", which have been caused by fire, theft, water or elemental events. Household items include ",
+            "bold": false
+          },
+          {
+            "string": "movable objects",
+            "bold": true
+          },
+          {
+            "string": " in the apartment or house - including basement, garage, attic, garden or balcony.",
+            "bold": false
+          }
+        ]
+      },
+      "whatIsCovered": {
+        "title": "The following items are normally covered:",
+        "list": [
+          "Furniture",
+          "Electrical appliances",
+          "Clothes",
+          "Jewelry, watches and other valuables",
+          "Curtains, vases, carpets",
+          "Sports equipment such as bicycles and skis",
+          "Other furnishings"
+        ]
+      },
+      "pay": {
+        "does": {
+          "title": "What damages are covered by home contents insurance?",
+          "text": [
+            {
+              "string": "Damage to household contents caused by ",
+              "bold": false
+            },
+            {
+              "string": "fire, water, natural disasters such as storms, and burglary",
+              "bold": true
+            },
+            {
+              "string": " is covered. Additionally, you can also insure ",
+              "bold": false
+            },
+            {
+              "string": "glass breakage or theft outside of the home",
+              "bold": true
+            },
+            {
+              "string": ". Other expenses and inconveniences",
+              "bold": true
+            },
+            {
+              "string": " resulting from a covered loss are also included. This includes costs for replacing locks, hotel accommodations, or cleanup, cleaning, and disposal work.",
+              "bold": false
+            }
+          ]
+        },
+        "doesNot": {
+          "title": "What damages are not covered by home contents insurance?",
+          "text": [
+            {
+              "string": "In general, the ",
+              "bold": false
+            },
+            {
+              "string": "coverage provided by home contents insurance varies",
+              "bold": true
+            },
+            {
+              "string": " depending on the policy. Therefore, check the exclusions in the general insurance conditions. In most cases, events related to war, civil unrest, and nuclear power are excluded from coverage. Also, damages intentionally caused by you are not covered by home contents insurance. You need a ",
+              "bold": false
+            },
+            {
+              "string": "liability insurance",
+              "bold": true
+            },
+            {
+              "string": " to cover damages to third-party property.",
+              "bold": false
+            }
+          ]
+        },
+        "you": {
+          "title": "What do I have to pay for myself?",
+          "text": [
+            {
+              "string": "In home contents insurance, the deductible typically ranges from ",
+              "bold": false
+            },
+            {
+              "string": "200 to 500 Swiss francs",
+              "bold": true
+            },
+            {
+              "string": ". The deductible is subtracted from the amount of the loss. You have to pay the deductible yourself. Tip: Make sure to adjust the deductible and coverage to your current life circumstances. This ensures that you don't pay too much or are underinsured.",
+              "bold": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "locale": "fr-FR",
+      "title": "Assurance habitation",
+      "what": {
+        "title": "Qu'est-ce qu'une assurance habitation ?",
+        "text": [
+          {
+            "string": "Une assurance habitation ",
+            "bold": false
+          },
+          {
+            "string": "couvre les dommages causés à vos biens",
+            "bold": true
+          },
+          {
+            "string": ", tels que les incendies, les vols, les dégâts des eaux ou les événements naturels. Les biens assurés sont les ",
+            "bold": false
+          },
+          {
+            "string": "biens meubles",
+            "bold": true
+          },
+          {
+            "string": " dans l'appartement ou la maison - y compris la cave, le garage, le grenier, le jardin ou le balcon.",
+            "bold": false
+          }
+        ]
+      },
+      "whatIsCovered": {
+        "title": "Les biens suivants sont généralement couverts :",
+        "list": [
+          "Meubles",
+          "Appareils électroménagers",
+          "Vêtements",
+          "Bijoux, montres et autres objets de valeur",
+          "Rideaux, vases, tapis",
+          "Équipements de sport tels que vélos et skis",
+          "Autres meubles et équipements"
+        ]
+      },
+      "pay": {
+        "does": {
+          "title": "Quels dommages sont couverts par l'assurance habitation ?",
+          "text": [
+            {
+              "string": "Les dommages aux biens causés par ",
+              "bold": false
+            },
+            {
+              "string": "le feu, l'eau, les événements naturels tels que les tempêtes et le vol par effraction sont couverts.",
+              "bold": true
+            },
+            {
+              "string": " Vous pouvez également souscrire une assurance pour ",
+              "bold": false
+            },
+            {
+              "string": "les bris de glace ou le vol simple à l'extérieur de l'appartement",
+              "bold": true
+            },
+            {
+              "string": ". De plus, ",
+              "bold": false
+            },
+            {
+              "string": "les autres coûts et tracas",
+              "bold": true
+            },
+            {
+              "string": " résultant d'un sinistre sont couverts. Cela inclut les frais de remplacement des serrures, les nuitées d'hôtel ou les travaux de nettoyage, de désencombrement et d'élimination des déchets.",
+              "bold": false
+            }
+          ]
+        },
+        "doesNot": {
+          "title": "Quels dommages la garantie de l'assurance habitation ne couvre-t-elle pas?",
+          "text": [
+            {
+              "string": "En règle générale, la ",
+              "bold": false
+            },
+            {
+              "string": "couverture de l'assurance habitation varie",
+              "bold": true
+            },
+            {
+              "string": " en fonction de la police. Vérifiez donc les exclusions dans les conditions générales d'assurance. Dans la plupart des cas, les événements liés à la guerre, aux troubles intérieurs et à l'énergie nucléaire sont exclus de l'assurance. Les dommages que vous avez causés intentionnellement ne sont également pas couverts par l'assurance habitation. Pour les dommages aux biens de tiers, vous avez besoin d'une ",
+              "bold": false
+            },
+            {
+              "string": "assurance responsabilité civile",
+              "bold": true
+            },
+            {
+              "string": ".",
+              "bold": false
+            }
+          ]
+        },
+        "you": {
+          "title": "Que dois-je payer moi-même ?",
+          "text": [
+            {
+              "string": "En ce qui concerne l'assurance habitation, la franchise varie généralement ",
+              "bold": false
+            },
+            {
+              "string": "de 200 à 500 francs suisses",
+              "bold": true
+            },
+            {
+              "string": ". La franchise est déduite du montant des dommages. Vous devez la payer vous-même. Astuce : Assurez-vous d'adapter la franchise et les couvertures à votre situation de vie actuelle. Vous vous assurez ainsi de ne pas payer trop cher ou d'être sous-assuré.",
+              "bold": false
+            }
+          ]
+        }
+      }
+    }
   ]
 }
