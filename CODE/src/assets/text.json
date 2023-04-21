@@ -579,5 +579,32 @@
         "sqr": "Veuillez entrer les mètres carrés"
       }
     }
+  ],
+
+  "customAlert": [
+    {
+      "locale": "de-DE",
+      "type": {
+        "success": "Erfolg",
+        "error": "Fehler",
+        "warning": "Warnung"
+      }
+    },
+    {
+      "locale": "en-GB",
+      "type": {
+        "success": "Success",
+        "error": "Error",
+        "warning": "Warning"
+      }
+    },
+    {
+      "locale": "fr-FR",
+      "type": {
+        "success": "Succès",
+        "error": "Erreur",
+        "warning": "Attention"
+      }
+    }
   ]
 }
