@@ -62,7 +62,7 @@
   }
 
   .hausrat {
-    @apply w-full m-0 px-2 flex flex-col items-center grow;
+    @apply w-full m-0 px-2 flex flex-col items-center grow bg-bauhaus-fade bg-center;
   }
   .hausrat > .section {
     @apply w-3/4 px-6 flex flex-col items-center my-4 border-2 border-gray-300 backdrop-blur-lg bg-gray-600 bg-opacity-40 rounded-md;
