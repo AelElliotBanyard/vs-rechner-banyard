@@ -6,6 +6,7 @@ import content from "../../../assets/text.json";
 import { useRouter } from "next/router";
 import { GetServerSideProps } from "next/types";
 import { DamagePageParams } from "@/types";
+import { FiCheck, FiShare2 } from "react-icons/fi";
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   let damage = Math.PI;
@@ -96,6 +97,7 @@ const HausratSchaden = ({ params }: DamagePageParams) => {
     link: false,
   });
   const [open, setOpen] = useState(false);
+  const [shared, setShared] = useState(false);
 
   
   useEffect(() => {
@@ -322,6 +324,18 @@ const HausratSchaden = ({ params }: DamagePageParams) => {
             <div className="message">
               <p>{message} </p>
             </div>
+            <button
+              onClick={() => {
+                share();
+                setShared(true);
+                setTimeout(() => {
+                  setShared(false);
+                }, 1000);
+              }}
+              className="btn share"
+            >
+              {shared ? <FiCheck /> : <FiShare2 />}
+            </button>
             <div className="buttons">
               <button className="btn" onClick={clear}>
                 {text.reset}

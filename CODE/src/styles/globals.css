@@ -161,6 +161,9 @@
   .btn:hover {
     @apply bg-green-500 text-black border-green-600;
   }
+  .btn.share {
+    @apply absolute top-0 right-2;
+  }
 
   .summe {
     @apply w-full m-0 px-2 flex flex-col items-center grow bg-circles-fade bg-center;
