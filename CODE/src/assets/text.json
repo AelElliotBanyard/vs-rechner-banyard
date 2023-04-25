@@ -543,7 +543,8 @@
       "errors": {
         "null": "Bitte allen Gegenstände einen Wert und eine Beschreibung geben",
         "min": "Bitte mindestens einen Gegenstand eingeben",
-        "sqr": "Bitte Quadratmeter eingeben"
+        "sqr": "Bitte Quadratmeter eingeben",
+        "link": "Link kopiert!"
       }
     },
     {
@@ -561,7 +562,8 @@
       "errors": {
         "null": "Please provide a value and a description for all items",
         "min": "Please enter at least one item",
-        "sqr": "Please enter square meters"
+        "sqr": "Please enter square meters",
+        "link": "Link copied!"
       }
     },
     {
@@ -579,7 +581,8 @@
       "errors": {
         "null": "Veuillez donner une valeur et une description à tous les articles",
         "min": "Veuillez entrer au moins un article",
-        "sqr": "Veuillez entrer les mètres carrés"
+        "sqr": "Veuillez entrer les mètres carrés",
+        "link": "Lien copié!"
       }
     }
   ],

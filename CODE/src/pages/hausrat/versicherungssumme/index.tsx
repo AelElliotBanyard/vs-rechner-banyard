@@ -87,6 +87,7 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
     message: "Success",
     type: "success",
     fill: false,
+    link: false,
   });
   const [open, setOpen] = useState(false);
 
@@ -130,6 +131,7 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
           message: text.errors.null,
           type: "error",
           fill: true,
+          link: false,
         });
         setOpen(true);
       }
@@ -151,6 +153,7 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
         message: text.errors.min,
         type: "error",
         fill: true,
+        link: false,
       });
       setOpen(true);
     }
@@ -193,6 +196,7 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
         message: text.errors.sqr,
         type: "error",
         fill: true,
+        link: false,
       });
       setOpen(true);
     }
@@ -232,6 +236,50 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
       setItemsIsClear(false);
       setSqrIsClear(false);
     }, 1000);
+  };
+
+  const share = () => {
+    let path = window.location.href.split("?")[0];
+    let itemsString = "items=";
+    itemsString += encodeURIComponent(JSON.stringify(items));
+    let vsString = `&vs=${vs}`;
+    let vwString = `&vw=${vw}`;
+    let sqrString = `sqr=${squareMetres}`;
+    let flatString = `&flat=${flatRate}`;
+    let link = "";
+    if (items[0].wert !== Math.PI) {
+      link = path + "?" + itemsString + vsString + vwString;
+    } else if (squareMetres !== Math.PI) {
+      link = path + "?" + sqrString + flatString + vsString + vwString;
+    }
+    if (squareMetres === Math.PI && items[0].wert === Math.PI) {
+      setError({
+        message: text.errors.min,
+        type: "error",
+        fill: true,
+        link: false,
+      });
+      setOpen(true);
+    } else {
+      try {
+        navigator.clipboard.writeText(link);
+        setError({
+          message: text.errors.link,
+          type: "success",
+          fill: false,
+          link: false,
+        });
+        setOpen(true);
+      } catch (err) {
+        setError({
+          message: link,
+          type: "success",
+          fill: false,
+          link: true,
+        });
+        setOpen(true);
+      }
+    }
   };
 
   return (
