@@ -8,6 +8,7 @@ import { MdOutlineDeleteForever, MdAdd } from "react-icons/md";
 import content from "../../../assets/text.json";
 import { useRouter } from "next/router";
 import { GetServerSideProps } from "next/types";
+import { FiShare2, FiCheck } from "react-icons/fi";
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   let items = [
@@ -90,7 +91,7 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
     link: false,
   });
   const [open, setOpen] = useState(false);
-
+  const [shared, setShared] = useState(false);
 
   useEffect(() => {
     router.push(router.asPath.split("?")[0]);
@@ -428,6 +429,20 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
                     : ""}
                 </p>
               </div>
+            </div>
+            <div>
+              <button
+                onClick={() => {
+                  share();
+                  setShared(true);
+                  setTimeout(() => {
+                    setShared(false);
+                  }, 1000);
+                }}
+                className="btn share"
+              >
+                {shared ? <FiCheck /> : <FiShare2 />}
+              </button>
             </div>
             <div className="buttons">
               <button className="btn" onClick={clear}>
