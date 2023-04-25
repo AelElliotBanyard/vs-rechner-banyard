@@ -8,6 +8,7 @@ const CustomAlert = ({
   fill,
   message,
   close,
+  link,
 }: CustomAlertParams) => {
   const { locale } = useRouter();
   let text = content.customAlert.filter((p) => p.locale === locale)[0];
@@ -40,7 +41,27 @@ const CustomAlert = ({
               : text.type.error}
           </p>
         </div>
-        <p className="p-4 text-white">{message}</p>
+        {link ? (
+          <div className="p-2 flex items-center gap-2">
+            <p className="text-white">{text.link}</p>
+            <input
+              type="text"
+              name=""
+              id=""
+              value={message}
+              className={
+                "p-2 text-white w-2/3 " +
+                (type === "success"
+                  ? "bg-green-600 border-green-700"
+                  : type === "warning"
+                  ? "bg-yellow-600 border-yellow-700"
+                  : "bg-red-600 border-red-700")
+              }
+            />
+          </div>
+        ) : (
+          <p className="p-4 text-white">{message}</p>
+        )}
 
         <div className="py-2 px-4 border-t-2 flex justify-end">
           <button

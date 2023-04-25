@@ -588,7 +588,8 @@
         "success": "Erfolg",
         "error": "Fehler",
         "warning": "Warnung"
-      }
+      },
+      "link": "Link kopieren:"
     },
     {
       "locale": "en-GB",
@@ -596,7 +597,8 @@
         "success": "Success",
         "error": "Error",
         "warning": "Warning"
-      }
+      },
+      "link": "Copy link:"
     },
     {
       "locale": "fr-FR",
@@ -604,7 +606,8 @@
         "success": "Succès",
         "error": "Erreur",
         "warning": "Attention"
-      }
+      },
+      "link": "Copier le lien:"
     }
   ]
 }

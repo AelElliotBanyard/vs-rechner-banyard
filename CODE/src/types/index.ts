@@ -27,6 +27,7 @@ export type CustomAlertParams = {
   fill: boolean;
   message: string;
   close: () => void;
+  link?: boolean;
 };
 
 export type DamagePageParams = {
