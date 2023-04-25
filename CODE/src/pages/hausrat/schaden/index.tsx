@@ -4,6 +4,16 @@ import { toOutString } from "@/utils/functions";
 import { useState } from "react";
 import content from "../../../assets/text.json";
 import { useRouter } from "next/router";
+import { GetServerSideProps } from "next/types";
+
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+
+  return {
+    props: {
+      test: "",
+    },
+  }
+}
 
 const HausratSchaden = () => {
   const { locale } = useRouter();
