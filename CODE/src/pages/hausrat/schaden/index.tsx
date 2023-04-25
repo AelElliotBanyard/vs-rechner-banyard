@@ -1,7 +1,7 @@
 import CustomAlert from "@/components/CustomAlert";
 import NumberInput from "@/components/CustomInputs/NumberInput";
 import { toOutString } from "@/utils/functions";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import content from "../../../assets/text.json";
 import { useRouter } from "next/router";
 import { GetServerSideProps } from "next/types";
@@ -71,6 +71,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 
 const HausratSchaden = ({ params }: DamagePageParams) => {
   const { locale } = useRouter();
+  const router = useRouter();
   let text = content.damage.filter((p) => p.locale === locale)[0];
   const [vs, setVs] = useState(params.vs);
   const [vw, setVw] = useState(params.vw);
@@ -94,6 +95,11 @@ const HausratSchaden = ({ params }: DamagePageParams) => {
     fill: false,
   });
   const [open, setOpen] = useState(false);
+
+  
+  useEffect(() => {
+    router.push(router.asPath.split("?")[0]);
+  }, []);
 
   const calc = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
