@@ -10,11 +10,59 @@ import { useRouter } from "next/router";
 import { GetServerSideProps } from "next/types";
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  let items = [
+    {
+      gegenstand: "",
+      wert: Math.PI,
+    },
+  ];
+  let itemsNotEmpty = false;
+  let squareMetres = Math.PI;
+  let squareMetresNotEmpty = false;
+  let flatRate = Math.PI;
+  let flatRateNotEmpty = false;
+  let vs = Math.PI;
+  let vsNotEmpty = false;
+  let vw = Math.PI;
+  let vwNotEmpty = false;
+
+  if (query.items) {
+    items = JSON.parse(decodeURIComponent(query.items as string));
+    itemsNotEmpty = true;
+  }
+  if (query.sqr) {
+    squareMetres = parseFloat(query.sqr as string);
+    squareMetresNotEmpty = true;
+  }
+  if (query.flat) {
+    flatRate = parseFloat(query.flat as string);
+    flatRateNotEmpty = true;
+  }
+  if (query.vs) {
+    vs = parseFloat(query.vs as string);
+    vsNotEmpty = true;
+  }
+  if (query.vw) {
+    vw = parseFloat(query.vw as string);
+    vwNotEmpty = true;
+  }
+
   return {
     props: {
-      test: ""
-    }
-  }
+      params: {
+        items: items,
+        itemsNotEmpty: itemsNotEmpty,
+        squareMetres: squareMetres,
+        squareMetresNotEmpty: squareMetresNotEmpty,
+        flatRate: flatRate,
+        flatRateNotEmpty: flatRateNotEmpty,
+        vs: vs,
+        vsNotEmpty: vsNotEmpty,
+        vw: vw,
+        vwNotEmpty: vwNotEmpty,
+      },
+    },
+  };
 };
 
 const HausratVersicherungssumme = () => {
