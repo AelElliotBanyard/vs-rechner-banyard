@@ -5,6 +5,7 @@ import { useState } from "react";
 import content from "../../../assets/text.json";
 import { useRouter } from "next/router";
 import { GetServerSideProps } from "next/types";
+import { DamagePageParams } from "@/types";
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   let damage = Math.PI;
@@ -68,7 +69,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   };
 };
 
-const HausratSchaden = () => {
+const HausratSchaden = ({ params }: DamagePageParams) => {
   const { locale } = useRouter();
   let text = content.damage.filter((p) => p.locale === locale)[0];
   const [vs, setVs] = useState(Math.PI);

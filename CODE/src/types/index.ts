@@ -28,3 +28,21 @@ export type CustomAlertParams = {
   message: string;
   close: () => void;
 };
+
+export type DamagePageParams = {
+  params: {
+    damage: number;
+    damageNotEmpty: boolean;
+    vs: number;
+    vsNotEmpty: boolean;
+    vw: number;
+    vwNotEmpty: boolean;
+    compensation: number;
+    compensationNotEmpty: boolean;
+    percentage: number;
+    percentageNotEmpty: boolean;
+    excess: number;
+    excessNotEmpty: boolean;
+    message: string;
+  };
+};
