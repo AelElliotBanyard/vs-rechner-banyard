@@ -72,22 +72,22 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 const HausratSchaden = ({ params }: DamagePageParams) => {
   const { locale } = useRouter();
   let text = content.damage.filter((p) => p.locale === locale)[0];
-  const [vs, setVs] = useState(Math.PI);
-  const [vw, setVw] = useState(Math.PI);
-  const [damage, setDamage] = useState(Math.PI);
+  const [vs, setVs] = useState(params.vs);
+  const [vw, setVw] = useState(params.vw);
+  const [damage, setDamage] = useState(params.damage);
   const [isClear, setIsClear] = useState(false);
   const [notEmpty, setNotEmpty] = useState({
-    vs: false,
-    vw: false,
-    damage: false,
-    compensation: false,
-    percentage: false,
-    excess: false,
+    vs: params.vsNotEmpty,
+    vw: params.vwNotEmpty,
+    damage: params.damageNotEmpty,
+    compensation: params.compensationNotEmpty,
+    percentage: params.percentageNotEmpty,
+    excess: params.excessNotEmpty,
   });
-  const [result, setResult] = useState(Math.PI);
-  const [percent, setPercent] = useState(Math.PI);
-  const [own, setOwn] = useState(Math.PI);
-  const [message, setMessage] = useState("");
+  const [result, setResult] = useState(params.compensation);
+  const [percent, setPercent] = useState(params.percentage);
+  const [own, setOwn] = useState(params.excess);
+  const [message, setMessage] = useState(params.message);
   const [error, setError] = useState({
     message: "Success",
     type: "success",
