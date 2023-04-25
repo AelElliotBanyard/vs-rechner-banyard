@@ -99,7 +99,6 @@ const HausratSchaden = ({ params }: DamagePageParams) => {
   const [open, setOpen] = useState(false);
   const [shared, setShared] = useState(false);
 
-  
   useEffect(() => {
     router.push(router.asPath.split("?")[0]);
   }, []);
@@ -182,62 +181,62 @@ const HausratSchaden = ({ params }: DamagePageParams) => {
     }, 1000);
   };
 
-   const share = () => {
-     let path = window.location.href.split("?")[0];
-     let vsString = `vs=${vs}`;
-     let vwString = `&vw=${vw}`;
-     let damageString = `&damage=${damage}`;
-     let compensationString = `&compensation=${result}`;
-     let percentageString = `&percentage=${percent}`;
-     let excessString = `&excess=${own}`;
-     let messageString = `&message=${encodeURIComponent(message)}`;
-     let link =
-       path +
-       "?" +
-       vsString +
-       vwString +
-       damageString +
-       compensationString +
-       percentageString +
-       excessString +
-       messageString;
+  const share = () => {
+    let path = window.location.href.split("?")[0];
+    let vsString = `vs=${vs}`;
+    let vwString = `&vw=${vw}`;
+    let damageString = `&damage=${damage}`;
+    let compensationString = `&compensation=${result}`;
+    let percentageString = `&percentage=${percent}`;
+    let excessString = `&excess=${own}`;
+    let messageString = `&message=${encodeURIComponent(message)}`;
+    let link =
+      path +
+      "?" +
+      vsString +
+      vwString +
+      damageString +
+      compensationString +
+      percentageString +
+      excessString +
+      messageString;
 
-     if (
-       result === Math.PI ||
-       percent === Math.PI ||
-       own === Math.PI ||
-       vw === Math.PI ||
-       vs === Math.PI ||
-       damage === Math.PI
-     ) {
-       setError({
-         link: false,
-         message: text.errors.fillEverything,
-         type: "error",
-         fill: true,
-       });
-       setOpen(true);
-     } else {
-       try {
-         navigator.clipboard.writeText(link);
-         setError({
-           ...error,
-           message: "Link Kopiert! ",
-           type: "success",
-           fill: false,
-         });
-         setOpen(true);
-       } catch (err) {
-         setError({
-           message: link,
-           type: "success",
-           fill: false,
-           link: true,
-         });
-         setOpen(true);
-       }
-     }
-   };
+    if (
+      result === Math.PI ||
+      percent === Math.PI ||
+      own === Math.PI ||
+      vw === Math.PI ||
+      vs === Math.PI ||
+      damage === Math.PI
+    ) {
+      setError({
+        link: false,
+        message: text.errors.fillEverything,
+        type: "error",
+        fill: true,
+      });
+      setOpen(true);
+    } else {
+      try {
+        navigator.clipboard.writeText(link);
+        setError({
+          ...error,
+          message: text.errors.link,
+          type: "success",
+          fill: false,
+        });
+        setOpen(true);
+      } catch (err) {
+        setError({
+          message: link,
+          type: "success",
+          fill: false,
+          link: true,
+        });
+        setOpen(true);
+      }
+    }
+  };
 
   return (
     <>

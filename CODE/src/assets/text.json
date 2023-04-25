@@ -474,7 +474,8 @@
         "vw0": "Der Versicherungswert darf nicht 0 sein.",
         "vwEmpty": "Der Versicherungswert darf nicht leer sein.",
         "damage": "Du must einen Schaden haben.",
-        "fillEverything": "Bitte alle Felder ausfüllen."
+        "fillEverything": "Bitte alle Felder ausfüllen.",
+        "link": "Link kopiert!"
       }
     },
     {
@@ -497,7 +498,8 @@
         "vw0": "The insured value cannot be 0.",
         "vwEmpty": "The insured value cannot be empty.",
         "damage": "You must have a damage.",
-        "fillEverything": "Please fill out all fields."
+        "fillEverything": "Please fill out all fields.",
+        "link": "Link copied!"
       }
     },
     {
@@ -520,7 +522,8 @@
         "vw0": "La valeur de l'assurance ne peut pas être nulle.",
         "vwEmpty": "La valeur de l'assurance ne peut pas être vide.",
         "damage": "Vous devez avoir des dommages.",
-        "fillEverything": "Veuillez remplir tous les champs."
+        "fillEverything": "Veuillez remplir tous les champs.",
+        "link": "Lien copié!"
       }
     }
   ],
