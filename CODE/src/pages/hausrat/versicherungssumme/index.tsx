@@ -7,7 +7,15 @@ import { useState } from "react";
 import { MdOutlineDeleteForever, MdAdd } from "react-icons/md";
 import content from "../../../assets/text.json";
 import { useRouter } from "next/router";
+import { GetServerSideProps } from "next/types";
 
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  return {
+    props: {
+      test: ""
+    }
+  }
+};
 
 const HausratVersicherungssumme = () => {
   const { locale } = useRouter();
