@@ -1,7 +1,7 @@
 import CustomAlert from "@/components/CustomAlert";
 import NumberInput from "@/components/CustomInputs/NumberInput";
 import TextInput from "@/components/CustomInputs/TextInput";
-import { Item, Items } from "@/types";
+import { Item, Items, VsSummePageParams } from "@/types";
 import { toOutString } from "@/utils/functions";
 import { useState } from "react";
 import { MdOutlineDeleteForever, MdAdd } from "react-icons/md";
@@ -65,7 +65,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   };
 };
 
-const HausratVersicherungssumme = () => {
+const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
   const { locale } = useRouter();
   let text = content.vsumme.filter((p) => p.locale === locale)[0];
   const [items, setItems] = useState([

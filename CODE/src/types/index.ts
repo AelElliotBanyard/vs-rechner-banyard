@@ -47,3 +47,23 @@ export type DamagePageParams = {
     message: string;
   };
 };
+
+export type VsSummePageParams = {
+  params: {
+    items: [
+      {
+        gegenstand: string;
+        wert: number;
+      }
+    ];
+    itemsNotEmpty: boolean;
+    squareMetres: number;
+    squareMetresNotEmpty: boolean;
+    flatRate: number;
+    flatRateNotEmpty: boolean;
+    vs: number;
+    vsNotEmpty: boolean;
+    vw: number;
+    vwNotEmpty: boolean;
+  };
+};
