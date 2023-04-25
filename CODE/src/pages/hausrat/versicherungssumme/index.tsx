@@ -3,7 +3,7 @@ import NumberInput from "@/components/CustomInputs/NumberInput";
 import TextInput from "@/components/CustomInputs/TextInput";
 import { Item, Items, VsSummePageParams } from "@/types";
 import { toOutString } from "@/utils/functions";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdOutlineDeleteForever, MdAdd } from "react-icons/md";
 import content from "../../../assets/text.json";
 import { useRouter } from "next/router";
@@ -67,6 +67,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 
 const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
   const { locale } = useRouter();
+  const router = useRouter();
   let text = content.vsumme.filter((p) => p.locale === locale)[0];
   const [items, setItems] = useState(params.items);
   const [squareMetres, setSquareMetres] = useState(params.squareMetres);
@@ -88,6 +89,11 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
     fill: false,
   });
   const [open, setOpen] = useState(false);
+
+
+  useEffect(() => {
+    router.push(router.asPath.split("?")[0]);
+  }, []);
 
   const calcItems = () => {
     setItemsIsClear(false);
