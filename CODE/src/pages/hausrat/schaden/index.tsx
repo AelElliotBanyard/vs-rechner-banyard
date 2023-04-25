@@ -7,13 +7,66 @@ import { useRouter } from "next/router";
 import { GetServerSideProps } from "next/types";
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-
+  let damage = Math.PI;
+  let damageNotEmpty = false;
+  let vs = Math.PI;
+  let vsNotEmpty = false;
+  let vw = Math.PI;
+  let vwNotEmpty = false;
+  let compensation = Math.PI;
+  let compensationNotEmpty = false;
+  let percentage = Math.PI;
+  let percentageNotEmpty = false;
+  let excess = Math.PI;
+  let excessNotEmpty = false;
+  let message = "";
+  if (query.damage) {
+    damage = parseFloat(query.damage as string);
+    damageNotEmpty = true;
+  }
+  if (query.vs) {
+    vs = parseFloat(query.vs as string);
+    vsNotEmpty = true;
+  }
+  if (query.vw) {
+    vw = parseFloat(query.vw as string);
+    vwNotEmpty = true;
+  }
+  if (query.compensation) {
+    compensation = parseFloat(query.compensation as string);
+    compensationNotEmpty = true;
+  }
+  if (query.percentage) {
+    percentage = parseFloat(query.percentage as string);
+    percentageNotEmpty = true;
+  }
+  if (query.excess) {
+    excess = parseFloat(query.excess as string);
+    excessNotEmpty = true;
+  }
+  if (query.message) {
+    message = query.message as string;
+  }
   return {
     props: {
-      test: "",
+      params: {
+        damage: damage,
+        damageNotEmpty: damageNotEmpty,
+        vs: vs,
+        vsNotEmpty: vsNotEmpty,
+        vw: vw,
+        vwNotEmpty: vwNotEmpty,
+        compensation: compensation,
+        compensationNotEmpty: compensationNotEmpty,
+        percentage: percentage,
+        percentageNotEmpty: percentageNotEmpty,
+        excess: excess,
+        excessNotEmpty: excessNotEmpty,
+        message: message,
+      },
     },
-  }
-}
+  };
+};
 
 const HausratSchaden = () => {
   const { locale } = useRouter();
