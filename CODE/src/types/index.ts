@@ -50,12 +50,7 @@ export type DamagePageParams = {
 
 export type VsSummePageParams = {
   params: {
-    items: [
-      {
-        gegenstand: string;
-        wert: number;
-      }
-    ];
+    items: Items;
     itemsNotEmpty: boolean;
     squareMetres: number;
     squareMetresNotEmpty: boolean;

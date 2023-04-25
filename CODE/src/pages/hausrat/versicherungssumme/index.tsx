@@ -68,24 +68,19 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
   const { locale } = useRouter();
   let text = content.vsumme.filter((p) => p.locale === locale)[0];
-  const [items, setItems] = useState([
-    {
-      gegenstand: "",
-      wert: Math.PI,
-    },
-  ]);
-  const [squareMetres, setSquareMetres] = useState(Math.PI);
-  const [flatRate, setFlatRate] = useState(Math.PI);
-  const [vs, setVs] = useState(Math.PI);
-  const [vw, setVw] = useState(Math.PI);
-  const [itemsIsClear, setItemsIsClear] = useState(false);
-  const [sqrIsClear, setSqrIsClear] = useState(false);
+  const [items, setItems] = useState(params.items);
+  const [squareMetres, setSquareMetres] = useState(params.squareMetres);
+  const [flatRate, setFlatRate] = useState(params.flatRate);
+  const [vs, setVs] = useState(params.vs);
+  const [vw, setVw] = useState(params.vw);
+  const [itemsIsClear, setItemsIsClear] = useState(!params.itemsNotEmpty);
+  const [sqrIsClear, setSqrIsClear] = useState(!params.squareMetresNotEmpty);
   const [notEmpty, setNotEmpty] = useState({
-    items: false,
-    squareMetres: false,
-    flatRate: false,
-    vs: false,
-    vw: false,
+    items: params.itemsNotEmpty,
+    squareMetres: params.squareMetresNotEmpty,
+    flatRate: params.flatRateNotEmpty,
+    vs: params.vsNotEmpty,
+    vw: params.vwNotEmpty,
   });
   const [error, setError] = useState({
     message: "Success",
