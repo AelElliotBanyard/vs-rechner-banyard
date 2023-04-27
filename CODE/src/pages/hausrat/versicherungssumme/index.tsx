@@ -26,6 +26,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   let vsNotEmpty = false;
   let vw = Math.PI;
   let vwNotEmpty = false;
+  let printable = false;
 
   if (query.items) {
     items = JSON.parse(decodeURIComponent(query.items as string));
@@ -48,6 +49,12 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     vwNotEmpty = true;
   }
 
+  if (query.items && query.vs && query.vw) {
+    printable = true;
+  } else if (query.sqr && query.flat && query.vs && query.vw) {
+    printable = true;
+  }
+
   return {
     props: {
       params: {
@@ -61,6 +68,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
         vsNotEmpty: vsNotEmpty,
         vw: vw,
         vwNotEmpty: vwNotEmpty,
+        printable: printable,
       },
     },
   };
@@ -92,13 +100,18 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
   });
   const [open, setOpen] = useState(false);
   const [shared, setShared] = useState(false);
+  
+  const [printable, setPrintable] = useState(params.printable);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     router.push(router.asPath.split("?")[0]);
+    setIsClient(true);
   }, []);
 
   const calcItems = () => {
     setItemsIsClear(false);
+    setPrintable(false);
     if (items.length >= 1) {
       if (
         !items.find(
@@ -115,6 +128,9 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
         setFlatRate(Math.PI);
         setSqrIsClear(true);
         setNotEmpty({ ...notEmpty, squareMetres: false, flatRate: false });
+        setTimeout(() => {
+          setPrintable(true);
+        }, 5000);
       } else {
         setVw(Math.PI);
         setVs(Math.PI);
@@ -135,6 +151,7 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
           link: false,
         });
         setOpen(true);
+        setPrintable(false);
       }
     } else {
       setVw(Math.PI);
@@ -157,10 +174,12 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
         link: false,
       });
       setOpen(true);
+      setPrintable(false);
     }
   };
 
   const calcSqr = () => {
+    setPrintable(false);
     if (squareMetres != Math.PI) {
       if (flatRate === Math.PI) setFlatRate(700);
       setSqrIsClear(false);
@@ -174,6 +193,9 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
       ]);
       setNotEmpty({ ...notEmpty, items: false });
       setItemsIsClear(true);
+      setTimeout(() => {
+        setPrintable(true);
+      }, 5000);
     } else {
       setSqrIsClear(true);
       setNotEmpty({
@@ -200,6 +222,7 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
         link: false,
       });
       setOpen(true);
+      setPrintable(false);
     }
   };
 
@@ -233,6 +256,7 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
       vs: false,
       vw: false,
     });
+    setPrintable(false);
     setTimeout(() => {
       setItemsIsClear(false);
       setSqrIsClear(false);
