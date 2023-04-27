@@ -586,7 +586,50 @@
       }
     }
   ],
-
+  "pdf": [
+    {
+      "locale": "de-DE",
+      "damage": {
+        "data": "Ihre Daten",
+        "vs": "Versicherungssumme",
+        "vw": "Versicherungswert",
+        "damage": "Schaden",
+        "calcs": "Berechnungen",
+        "compensation": "Entschädigung",
+        "percent": "Prozentuale Abdeckung",
+        "excess": "Selbstbehalt",
+        "comment": "Bemerkungen"
+      }
+    },
+    {
+      "locale": "en-GB",
+      "damage": {
+        "data": "Your data",
+        "vs": "Insurance sum",
+        "vw": "Insured value",
+        "damage": "Damage",
+        "calcs": "Calculations",
+        "compensation": "Compensation",
+        "percent": "Percentage coverage",
+        "excess": "Excess",
+        "comment": "Comment"
+      }
+    },
+    {
+      "locale": "fr-FR",
+      "damage": {
+        "data": "Vos données",
+        "vs": "Somme assurée",
+        "vw": "Valeur assurée",
+        "damage": "Dommages",
+        "calcs": "Calculs",
+        "compensation": "Indemnisation",
+        "percent": "Couverture en pourcentage",
+        "excess": "Franchise",
+        "comment": "Commentaire"
+      }
+    }
+  ],
   "customAlert": [
     {
       "locale": "de-DE",
