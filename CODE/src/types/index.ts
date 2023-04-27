@@ -79,3 +79,9 @@ export type PDFSqrParams = {
   vs: number;
   vw: number;
 };
+
+export type PDFVsSummeParams = {
+  items: Item[];
+  vw: number;
+  vs: number;
+};
