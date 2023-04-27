@@ -72,3 +72,10 @@ export type PDFDamageParams = {
   own: number;
   message: string;
 };
+
+export type PDFSqrParams = {
+  squareMetres: number;
+  flatRate: number;
+  vs: number;
+  vw: number;
+};
