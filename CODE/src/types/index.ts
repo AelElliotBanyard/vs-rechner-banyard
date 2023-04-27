@@ -45,6 +45,7 @@ export type DamagePageParams = {
     excess: number;
     excessNotEmpty: boolean;
     message: string;
+    printable: boolean;
   };
 };
 
