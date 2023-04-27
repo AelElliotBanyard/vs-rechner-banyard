@@ -164,6 +164,15 @@
   .btn.share {
     @apply absolute top-0 right-2;
   }
+  .btn > .loading {
+    @apply animate-spin-reverse w-[1.5em] h-[1.5em];
+  }
+  .btn > .downloadIcon {
+    @apply w-[1.5em] h-[1.5em];
+  }
+  .btn > .printIcon {
+    @apply w-[1.5em] h-[1.5em];
+  }
 
   .summe {
     @apply w-full m-0 px-2 flex flex-col items-center grow bg-circles-fade bg-center;
