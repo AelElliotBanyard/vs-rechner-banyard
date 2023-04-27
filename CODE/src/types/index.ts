@@ -91,3 +91,10 @@ export type PrintParams = {
   printable: boolean;
   check: number;
 };
+
+export type DownloadParams = {
+  document: any;
+  printable: boolean;
+  filename: string;
+  check: string;
+};
