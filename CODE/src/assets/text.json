@@ -599,6 +599,17 @@
         "percent": "Prozentuale Abdeckung",
         "excess": "Selbstbehalt",
         "comment": "Bemerkungen"
+      },
+      "sqr": {
+        "yourData": "Ihre Daten",
+        "sqrMeters": "Quadratmeter",
+        "flatRate": "Pauschalbetrag",
+        "total": "Total",
+        "result": "Ergebnis",
+        "vw": "Versicherungswert",
+        "vwSub": "(effektiven Wert Ihres Hausrats)",
+        "vs": "Versicherungssumme",
+        "vsSub": "(Wiederbeschaffungswert)"
       }
     },
     {
@@ -613,6 +624,17 @@
         "percent": "Percentage coverage",
         "excess": "Excess",
         "comment": "Comment"
+      },
+      "sqr": {
+        "yourData": "Your data",
+        "sqrMeters": "Square meters",
+        "flatRate": "Flat rate",
+        "total": "Total",
+        "result": "Result",
+        "vw": "Insured value",
+        "vwSub": "(effective value of your household goods)",
+        "vs": "Insurance sum",
+        "vsSub": "(replacement value)"
       }
     },
     {
@@ -627,6 +649,17 @@
         "percent": "Couverture en pourcentage",
         "excess": "Franchise",
         "comment": "Commentaire"
+      },
+      "sqr": {
+        "yourData": "Vos données",
+        "sqrMeters": "Mètres carrés",
+        "flatRate": "Forfait",
+        "total": "Total",
+        "result": "Résultat",
+        "vw": "Valeur assurée",
+        "vwSub": "(valeur effective de vos biens ménagers)",
+        "vs": "Somme assurée",
+        "vsSub": "(valeur de remplacement)"
       }
     }
   ],
