@@ -85,3 +85,9 @@ export type PDFVsSummeParams = {
   vw: number;
   vs: number;
 };
+
+export type PrintParams = {
+  document: any;
+  printable: boolean;
+  check: number;
+};
