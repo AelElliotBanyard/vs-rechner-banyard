@@ -62,3 +62,13 @@ export type VsSummePageParams = {
     vwNotEmpty: boolean;
   };
 };
+
+export type PDFDamageParams = {
+  vs: number;
+  vw: number;
+  schaden: number;
+  result: number;
+  percent: number;
+  own: number;
+  message: string;
+};
