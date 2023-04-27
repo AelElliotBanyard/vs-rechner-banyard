@@ -7,6 +7,9 @@ import { useRouter } from "next/router";
 import { GetServerSideProps } from "next/types";
 import { DamagePageParams } from "@/types";
 import { FiCheck, FiShare2 } from "react-icons/fi";
+import Print from "@/components/PDF/Print";
+import PDFDamage from "@/components/PDF/PDFDamage";
+import Download from "@/components/PDF/Download";
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   let damage = Math.PI;
@@ -114,7 +117,6 @@ const HausratSchaden = ({ params }: DamagePageParams) => {
 
   const [printable, setPrintable] = useState(params.printable);
   const [isClient, setIsClient] = useState(false);
-
 
   useEffect(() => {
     router.push(router.asPath.split("?")[0]);
@@ -359,9 +361,44 @@ const HausratSchaden = ({ params }: DamagePageParams) => {
               {shared ? <FiCheck /> : <FiShare2 />}
             </button>
             <div className="buttons">
+              {isClient && (
+                <Print
+                  document={
+                    <PDFDamage
+                      vs={vs}
+                      vw={vw}
+                      damage={damage}
+                      result={result}
+                      percent={percent}
+                      own={percent}
+                      message={message}
+                    />
+                  }
+                  printable={printable}
+                  check={result}
+                />
+              )}
               <button className="btn" onClick={clear}>
                 {text.reset}
               </button>
+              {isClient && (
+                <Download
+                  document={
+                    <PDFDamage
+                      vs={vs}
+                      vw={vw}
+                      damage={damage}
+                      result={result}
+                      percent={percent}
+                      own={percent}
+                      message={message}
+                    />
+                  }
+                  printable={printable}
+                  check={result}
+                  filename="household_damage.pdf"
+                />
+              )}
             </div>
           </div>
         </div>
