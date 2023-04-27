@@ -96,5 +96,5 @@ export type DownloadParams = {
   document: any;
   printable: boolean;
   filename: string;
-  check: string;
+  check: number;
 };
