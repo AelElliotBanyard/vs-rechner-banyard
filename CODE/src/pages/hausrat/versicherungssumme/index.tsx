@@ -4,11 +4,15 @@ import TextInput from "@/components/CustomInputs/TextInput";
 import { Item, Items, VsSummePageParams } from "@/types";
 import { toOutString } from "@/utils/functions";
 import { useEffect, useState } from "react";
-import { MdOutlineDeleteForever, MdAdd } from "react-icons/md";
+import { MdOutlineDeleteForever, MdAdd, MdPrint, MdDownload } from "react-icons/md";
 import content from "../../../assets/text.json";
 import { useRouter } from "next/router";
 import { GetServerSideProps } from "next/types";
 import { FiShare2, FiCheck } from "react-icons/fi";
+import Print from "@/components/PDF/Print";
+import PDFSqr from "@/components/PDF/PDFSqr";
+import PDFVsSumme from "@/components/PDF/PDFVsSumme";
+import Download from "@/components/PDF/Download";
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   let items = [
@@ -469,9 +473,61 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
               </button>
             </div>
             <div className="buttons">
+              {isClient &&
+                (itemsIsClear ? (
+                  <Print
+                    document={
+                      <PDFSqr
+                        vs={vs}
+                        vw={vw}
+                        squareMetres={squareMetres}
+                        flatRate={flatRate}
+                      />
+                    }
+                    check={vs}
+                    printable={printable}
+                  />
+                ) : sqrIsClear ? (
+                  <Print
+                    document={<PDFVsSumme vs={vs} vw={vw} items={items} />}
+                    check={vs}
+                    printable={printable}
+                  />
+                ) : (
+                  <a className="btn" href={"#"} target={"_self"}>
+                    <MdPrint className="printIcon" />
+                  </a>
+                ))}
               <button className="btn" onClick={clear}>
                 {text.reset}
               </button>
+              {isClient &&
+                (itemsIsClear ? (
+                  <Download
+                    document={
+                      <PDFSqr
+                        vs={vs}
+                        vw={vw}
+                        squareMetres={squareMetres}
+                        flatRate={flatRate}
+                      />
+                    }
+                    filename="insurance-sum.pdf"
+                    printable={printable}
+                    check={vs}
+                  />
+                ) : sqrIsClear ? (
+                  <Download
+                    document={<PDFVsSumme vs={vs} vw={vw} items={items} />}
+                    filename="insurance-sum.pdf"
+                    printable={printable}
+                    check={vs}
+                  />
+                ) : (
+                  <a className="btn" href={"#"} target={"_self"}>
+                    <MdDownload className="downloadIcon" />
+                  </a>
+                ))}
             </div>
           </div>
         </div>
