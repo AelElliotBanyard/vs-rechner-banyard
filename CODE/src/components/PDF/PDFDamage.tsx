@@ -42,73 +42,78 @@ const pdfStyle = StyleSheet.create({
 const { locale } = useRouter();
 let text = content.pdf.filter((p) => p.locale === locale)[0];
 
-const PDFDamage = ({ vs, vw, schaden, result, percent, own, message }: PDFDamageParams) => {
-  return (
-    <PDFBase>
-      <View style={pdfStyle.subSection}>
-        <Text style={pdfStyle.title}>{text.damage.data}</Text>
-        <View style={pdfStyle.listItem}>
-          <Text style={pdfStyle.listItemLeft}>{text.damage.vs}</Text>
-          <Text style={pdfStyle.listItemRight}>
-            {toOutString(Math.round(vs * 100 + Number.EPSILON) / 100) + " CHF"}
-          </Text>
-        </View>
-        <View style={pdfStyle.listItem}>
-          <Text style={pdfStyle.listItemLeft}>{text.damage.vw}</Text>
-          <Text style={pdfStyle.listItemRight}>
-            {toOutString(Math.round(vw * 100 + Number.EPSILON) / 100) + " CHF"}
-          </Text>
-        </View>
-        <View style={pdfStyle.listItem}>
-          <Text style={pdfStyle.listItemLeft}>{text.damage.damage}</Text>
-          <Text style={pdfStyle.listItemRight}>
-            {toOutString(Math.round(schaden * 100 + Number.EPSILON) / 100) +
-              " CHF"}
-          </Text>
-        </View>
+const PDFDamage = ({
+  vs,
+  vw,
+  schaden,
+  result,
+  percent,
+  own,
+  message,
+}: PDFDamageParams) => (
+  <PDFBase>
+    <View style={pdfStyle.subSection}>
+      <Text style={pdfStyle.title}>{text.damage.data}</Text>
+      <View style={pdfStyle.listItem}>
+        <Text style={pdfStyle.listItemLeft}>{text.damage.vs}</Text>
+        <Text style={pdfStyle.listItemRight}>
+          {toOutString(Math.round(vs * 100 + Number.EPSILON) / 100) + " CHF"}
+        </Text>
       </View>
-      <View style={pdfStyle.subSection}>
-        <Text style={pdfStyle.title}>{text.damage.calcs}</Text>
-        <View style={pdfStyle.listItem}>
-          <Text style={pdfStyle.listItemLeft}>{text.damage.compensation}</Text>
-          <Text style={pdfStyle.listItemRight}>
-            {result != Math.PI
-              ? toOutString(Math.round(result * 100 + Number.EPSILON) / 100) +
-                " CHF"
-              : ""}
-          </Text>
-        </View>
-        <View style={pdfStyle.listItem}>
-          <Text style={pdfStyle.listItemLeft}>{text.damage.percent}</Text>
-          <Text
-            style={[
-              pdfStyle.listItemRight,
-              percent < 100 ? { color: "red" } : { color: "green" },
-            ]}
-          >
-            {percent != Math.PI
-              ? Math.round(percent * 100 + Number.EPSILON) / 100 + "%"
-              : ""}
-          </Text>
-        </View>
-        <View style={pdfStyle.listItem}>
-          <Text style={pdfStyle.listItemLeft}>{text.damage.excess}</Text>
-          <Text style={pdfStyle.listItemRight}>
-            {own != Math.PI
-              ? toOutString(Math.round(own * 100 + Number.EPSILON) / 100) +
-                " CHF"
-              : ""}
-          </Text>
-        </View>
+      <View style={pdfStyle.listItem}>
+        <Text style={pdfStyle.listItemLeft}>{text.damage.vw}</Text>
+        <Text style={pdfStyle.listItemRight}>
+          {toOutString(Math.round(vw * 100 + Number.EPSILON) / 100) + " CHF"}
+        </Text>
       </View>
-      <View style={pdfStyle.subSection}>
-        <Text style={pdfStyle.title}>{text.damage.comment}</Text>
-        <View style={pdfStyle.listItem}>
-          <Text>{message}</Text>
-        </View>
+      <View style={pdfStyle.listItem}>
+        <Text style={pdfStyle.listItemLeft}>{text.damage.damage}</Text>
+        <Text style={pdfStyle.listItemRight}>
+          {toOutString(Math.round(schaden * 100 + Number.EPSILON) / 100) +
+            " CHF"}
+        </Text>
       </View>
-    </PDFBase>
-  );
-};
+    </View>
+    <View style={pdfStyle.subSection}>
+      <Text style={pdfStyle.title}>{text.damage.calcs}</Text>
+      <View style={pdfStyle.listItem}>
+        <Text style={pdfStyle.listItemLeft}>{text.damage.compensation}</Text>
+        <Text style={pdfStyle.listItemRight}>
+          {result != Math.PI
+            ? toOutString(Math.round(result * 100 + Number.EPSILON) / 100) +
+              " CHF"
+            : ""}
+        </Text>
+      </View>
+      <View style={pdfStyle.listItem}>
+        <Text style={pdfStyle.listItemLeft}>{text.damage.percent}</Text>
+        <Text
+          style={[
+            pdfStyle.listItemRight,
+            percent < 100 ? { color: "red" } : { color: "green" },
+          ]}
+        >
+          {percent != Math.PI
+            ? Math.round(percent * 100 + Number.EPSILON) / 100 + "%"
+            : ""}
+        </Text>
+      </View>
+      <View style={pdfStyle.listItem}>
+        <Text style={pdfStyle.listItemLeft}>{text.damage.excess}</Text>
+        <Text style={pdfStyle.listItemRight}>
+          {own != Math.PI
+            ? toOutString(Math.round(own * 100 + Number.EPSILON) / 100) + " CHF"
+            : ""}
+        </Text>
+      </View>
+    </View>
+    <View style={pdfStyle.subSection}>
+      <Text style={pdfStyle.title}>{text.damage.comment}</Text>
+      <View style={pdfStyle.listItem}>
+        <Text>{message}</Text>
+      </View>
+    </View>
+  </PDFBase>
+);
 
 export default PDFDamage;

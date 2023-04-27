@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 import { Text, View, StyleSheet } from "@react-pdf/renderer";
 import { toOutString } from "@/utils/functions";
 import PDFBase from "./PDFBase";
 import content from "../../assets/text.json";
 import { useRouter } from "next/router";
-import { Item, PDFVsSummeParams } from '@/types';
+import { Item, PDFVsSummeParams } from "@/types";
 
 const pdfStyle = StyleSheet.create({
   subSection: {
@@ -68,56 +68,52 @@ const pdfStyle = StyleSheet.create({
 const { locale } = useRouter();
 let text = content.pdf.filter((p) => p.locale === locale)[0];
 
-const PDFVsSumme = ({ items, vw, vs }: PDFVsSummeParams) => {
-  return (
-    <PDFBase>
-      <View style={pdfStyle.subSection}>
-        <Text style={pdfStyle.title}>{text.vsSumme.yourList}</Text>
-        <View style={pdfStyle.items}>
-          {items.map((item: Item, index: number) => (
-            <View key={index} style={pdfStyle.item}>
-              <Text>{item.gegenstand}</Text>
-              <Text>
-                {toOutString(
-                  Math.round(item.wert * 100 + Number.EPSILON) / 100
-                )}{" "}
-                CHF
-              </Text>
-            </View>
-          ))}
-        </View>
-        <View style={pdfStyle.total}>
-          <Text style={pdfStyle.totalText}>{text.vsSumme.total}</Text>
-          <Text style={pdfStyle.totalValue}>
+const PDFVsSumme = ({ items, vw, vs }: PDFVsSummeParams) => (
+  <PDFBase>
+    <View style={pdfStyle.subSection}>
+      <Text style={pdfStyle.title}>{text.vsSumme.yourList}</Text>
+      <View style={pdfStyle.items}>
+        {items.map((item: Item, index: number) => (
+          <View key={index} style={pdfStyle.item}>
+            <Text>{item.gegenstand}</Text>
+            <Text>
+              {toOutString(Math.round(item.wert * 100 + Number.EPSILON) / 100)}{" "}
+              CHF
+            </Text>
+          </View>
+        ))}
+      </View>
+      <View style={pdfStyle.total}>
+        <Text style={pdfStyle.totalText}>{text.vsSumme.total}</Text>
+        <Text style={pdfStyle.totalValue}>
+          {toOutString(Math.round(vw * 100 + Number.EPSILON) / 100)} CHF
+        </Text>
+      </View>
+    </View>
+    <View style={pdfStyle.subSection}>
+      <Text style={pdfStyle.title}>{text.vsSumme.result}</Text>
+      <View style={pdfStyle.items}>
+        <View style={pdfStyle.item}>
+          <View style={pdfStyle.itemTexts}>
+            <Text style={pdfStyle.itemText}>{text.vsSumme.vw}</Text>
+            <Text style={pdfStyle.itemSmallText}>{text.vsSumme.vwSub}</Text>
+          </View>
+          <Text style={pdfStyle.itemValue}>
             {toOutString(Math.round(vw * 100 + Number.EPSILON) / 100)} CHF
           </Text>
         </View>
-      </View>
-      <View style={pdfStyle.subSection}>
-        <Text style={pdfStyle.title}>{text.vsSumme.result}</Text>
-        <View style={pdfStyle.items}>
-          <View style={pdfStyle.item}>
-            <View style={pdfStyle.itemTexts}>
-              <Text style={pdfStyle.itemText}>{text.vsSumme.vw}</Text>
-              <Text style={pdfStyle.itemSmallText}>{text.vsSumme.vwSub}</Text>
-            </View>
-            <Text style={pdfStyle.itemValue}>
-              {toOutString(Math.round(vw * 100 + Number.EPSILON) / 100)} CHF
-            </Text>
+        <View style={pdfStyle.item}>
+          <View style={pdfStyle.itemTexts}>
+            <Text style={pdfStyle.itemText}>{text.vsSumme.vs}</Text>
+            <Text style={pdfStyle.itemSmallText}>{text.vsSumme.vsSub}</Text>
           </View>
-          <View style={pdfStyle.item}>
-            <View style={pdfStyle.itemTexts}>
-              <Text style={pdfStyle.itemText}>{text.vsSumme.vs}</Text>
-              <Text style={pdfStyle.itemSmallText}>{text.vsSumme.vsSub}</Text>
-            </View>
-            <Text style={pdfStyle.itemValue}>
-              {toOutString(Math.round(vs * 100 + Number.EPSILON) / 100)} CHF
-            </Text>
-          </View>
+          <Text style={pdfStyle.itemValue}>
+            {toOutString(Math.round(vs * 100 + Number.EPSILON) / 100)} CHF
+          </Text>
         </View>
       </View>
-    </PDFBase>
-  );
-};
+    </View>
+  </PDFBase>
+);
 
 export default PDFVsSumme;

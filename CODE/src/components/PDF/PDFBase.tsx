@@ -76,36 +76,34 @@ type PDFBaseProps = {
   children: JSX.Element | JSX.Element[];
 };
 
-const PDFBase = ({ children }: PDFBaseProps) => {
-  return (
-    <Document>
-      <Page size="A4">
-        <View style={pdfStyle.waterMark}>
-          <Image src="./Logo-big-light-transparent.png" />
-        </View>
-        <View style={pdfStyle.main}>
-          <View style={pdfStyle.header}>
-            <Image
-              src="./Logo-big-light-transparent.png"
-              style={pdfStyle.headerImage}
-            />
-            <View style={pdfStyle.headerAddress}>
-              <Text style={pdfStyle.headerAddressTitle}>Banyard.tech</Text>
-              <Text style={pdfStyle.headerAddressText}>Ael Elliot Banyard</Text>
-              <Text style={pdfStyle.headerAddressEmail}>
-                ael.banyard@gmail.com
-              </Text>
-              <View style={pdfStyle.headerAddressLinks}>
-                <Link src="https://github.com/AelElliotBanyard">GitHub</Link>
-                <Link src="https://www.banyard.tech">Website</Link>
-              </View>
+const PDFBase = ({ children }: PDFBaseProps) => (
+  <Document>
+    <Page size="A4">
+      <View style={pdfStyle.waterMark}>
+        <Image src="./Logo-big-light-transparent.png" />
+      </View>
+      <View style={pdfStyle.main}>
+        <View style={pdfStyle.header}>
+          <Image
+            src="./Logo-big-light-transparent.png"
+            style={pdfStyle.headerImage}
+          />
+          <View style={pdfStyle.headerAddress}>
+            <Text style={pdfStyle.headerAddressTitle}>Banyard.tech</Text>
+            <Text style={pdfStyle.headerAddressText}>Ael Elliot Banyard</Text>
+            <Text style={pdfStyle.headerAddressEmail}>
+              ael.banyard@gmail.com
+            </Text>
+            <View style={pdfStyle.headerAddressLinks}>
+              <Link src="https://github.com/AelElliotBanyard">GitHub</Link>
+              <Link src="https://www.banyard.tech">Website</Link>
             </View>
           </View>
-          <View style={pdfStyle.section}>{children}</View>
         </View>
-      </Page>
-    </Document>
-  );
-};
+        <View style={pdfStyle.section}>{children}</View>
+      </View>
+    </Page>
+  </Document>
+);
 
 export default PDFBase;
