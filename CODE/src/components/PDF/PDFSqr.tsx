@@ -84,42 +84,41 @@ const pdfStyle = StyleSheet.create({
   },
 });
 
-const { locale } = useRouter();
-let text = content.pdf.filter((p) => p.locale === locale)[0];
-
 const PDFSqr = ({ squareMetres, flatRate, vs, vw }: PDFSqrParams) => (
   <PDFBase>
     <View style={pdfStyle.subSection}>
-      <Text style={pdfStyle.title}>{text.sqr.yourData}</Text>
+      <Text style={pdfStyle.title}>Your data</Text>
       <View style={pdfStyle.items}>
         <View style={pdfStyle.listItem}>
-          <Text style={pdfStyle.listItemLeft}>{text.sqr.sqrMeters}</Text>
+          <Text style={pdfStyle.listItemLeft}>Square meters</Text>
           <Text style={pdfStyle.listItemRight}>
             {toOutString(Math.round(squareMetres * 100 + Number.EPSILON) / 100)}{" "}
             m&#0178;
           </Text>
         </View>
         <View style={pdfStyle.listItem}>
-          <Text style={pdfStyle.listItemLeft}>{text.sqr.flatRate}</Text>
+          <Text style={pdfStyle.listItemLeft}>Flat rate</Text>
           <Text style={pdfStyle.listItemRight}>
             {toOutString(Math.round(flatRate * 100 + Number.EPSILON) / 100)} CHF
           </Text>
         </View>
       </View>
       <View style={pdfStyle.total}>
-        <Text style={pdfStyle.totalText}>{text.sqr.total}</Text>
+        <Text style={pdfStyle.totalText}>Total</Text>
         <Text style={pdfStyle.totalValue}>
           {toOutString(Math.round(vw * 100 + Number.EPSILON) / 100)} CHF
         </Text>
       </View>
     </View>
     <View style={pdfStyle.subSection}>
-      <Text style={pdfStyle.title}>{text.sqr.result}</Text>
+      <Text style={pdfStyle.title}>Result</Text>
       <View style={pdfStyle.items}>
         <View style={pdfStyle.item}>
           <View style={pdfStyle.itemTexts}>
-            <Text style={pdfStyle.itemText}>{text.sqr.vw}</Text>
-            <Text style={pdfStyle.itemSmallText}>{text.sqr.vwSub}</Text>
+            <Text style={pdfStyle.itemText}>Insured value</Text>
+            <Text style={pdfStyle.itemSmallText}>
+              (effective value of your household goods)
+            </Text>
           </View>
           <Text style={pdfStyle.itemValue}>
             {toOutString(Math.round(vw * 100 + Number.EPSILON) / 100)} CHF
@@ -127,8 +126,8 @@ const PDFSqr = ({ squareMetres, flatRate, vs, vw }: PDFSqrParams) => (
         </View>
         <View style={pdfStyle.item}>
           <View style={pdfStyle.itemTexts}>
-            <Text style={pdfStyle.itemText}>{text.sqr.vs}</Text>
-            <Text style={pdfStyle.itemSmallText}>{text.sqr.vsSub}</Text>
+            <Text style={pdfStyle.itemText}>Insurance sum</Text>
+            <Text style={pdfStyle.itemSmallText}>(replacement value)</Text>
           </View>
           <Text style={pdfStyle.itemValue}>
             {toOutString(Math.round(vs * 100 + Number.EPSILON) / 100)} CHF

@@ -65,13 +65,10 @@ const pdfStyle = StyleSheet.create({
   },
 });
 
-const { locale } = useRouter();
-let text = content.pdf.filter((p) => p.locale === locale)[0];
-
 const PDFVsSumme = ({ items, vw, vs }: PDFVsSummeParams) => (
   <PDFBase>
     <View style={pdfStyle.subSection}>
-      <Text style={pdfStyle.title}>{text.vsSumme.yourList}</Text>
+      <Text style={pdfStyle.title}>Your list</Text>
       <View style={pdfStyle.items}>
         {items.map((item: Item, index: number) => (
           <View key={index} style={pdfStyle.item}>
@@ -84,19 +81,21 @@ const PDFVsSumme = ({ items, vw, vs }: PDFVsSummeParams) => (
         ))}
       </View>
       <View style={pdfStyle.total}>
-        <Text style={pdfStyle.totalText}>{text.vsSumme.total}</Text>
+        <Text style={pdfStyle.totalText}>Total</Text>
         <Text style={pdfStyle.totalValue}>
           {toOutString(Math.round(vw * 100 + Number.EPSILON) / 100)} CHF
         </Text>
       </View>
     </View>
     <View style={pdfStyle.subSection}>
-      <Text style={pdfStyle.title}>{text.vsSumme.result}</Text>
+      <Text style={pdfStyle.title}>Result</Text>
       <View style={pdfStyle.items}>
         <View style={pdfStyle.item}>
           <View style={pdfStyle.itemTexts}>
-            <Text style={pdfStyle.itemText}>{text.vsSumme.vw}</Text>
-            <Text style={pdfStyle.itemSmallText}>{text.vsSumme.vwSub}</Text>
+            <Text style={pdfStyle.itemText}>Insured value</Text>
+            <Text style={pdfStyle.itemSmallText}>
+              (effective value of your household goods)
+            </Text>
           </View>
           <Text style={pdfStyle.itemValue}>
             {toOutString(Math.round(vw * 100 + Number.EPSILON) / 100)} CHF
@@ -104,8 +103,8 @@ const PDFVsSumme = ({ items, vw, vs }: PDFVsSummeParams) => (
         </View>
         <View style={pdfStyle.item}>
           <View style={pdfStyle.itemTexts}>
-            <Text style={pdfStyle.itemText}>{text.vsSumme.vs}</Text>
-            <Text style={pdfStyle.itemSmallText}>{text.vsSumme.vsSub}</Text>
+            <Text style={pdfStyle.itemText}>Insurance sum</Text>
+            <Text style={pdfStyle.itemSmallText}>(replacement value)</Text>
           </View>
           <Text style={pdfStyle.itemValue}>
             {toOutString(Math.round(vs * 100 + Number.EPSILON) / 100)} CHF

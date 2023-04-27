@@ -39,9 +39,6 @@ const pdfStyle = StyleSheet.create({
   },
 });
 
-const { locale } = useRouter();
-let text = content.pdf.filter((p) => p.locale === locale)[0];
-
 const PDFDamage = ({
   vs,
   vw,
@@ -53,21 +50,21 @@ const PDFDamage = ({
 }: PDFDamageParams) => (
   <PDFBase>
     <View style={pdfStyle.subSection}>
-      <Text style={pdfStyle.title}>{text.damage.data}</Text>
+      <Text style={pdfStyle.title}>Your data</Text>
       <View style={pdfStyle.listItem}>
-        <Text style={pdfStyle.listItemLeft}>{text.damage.vs}</Text>
+        <Text style={pdfStyle.listItemLeft}>Insurance sum</Text>
         <Text style={pdfStyle.listItemRight}>
           {toOutString(Math.round(vs * 100 + Number.EPSILON) / 100) + " CHF"}
         </Text>
       </View>
       <View style={pdfStyle.listItem}>
-        <Text style={pdfStyle.listItemLeft}>{text.damage.vw}</Text>
+        <Text style={pdfStyle.listItemLeft}>Insured value</Text>
         <Text style={pdfStyle.listItemRight}>
           {toOutString(Math.round(vw * 100 + Number.EPSILON) / 100) + " CHF"}
         </Text>
       </View>
       <View style={pdfStyle.listItem}>
-        <Text style={pdfStyle.listItemLeft}>{text.damage.damage}</Text>
+        <Text style={pdfStyle.listItemLeft}>Damage</Text>
         <Text style={pdfStyle.listItemRight}>
           {toOutString(Math.round(damage * 100 + Number.EPSILON) / 100) +
             " CHF"}
@@ -75,9 +72,9 @@ const PDFDamage = ({
       </View>
     </View>
     <View style={pdfStyle.subSection}>
-      <Text style={pdfStyle.title}>{text.damage.calcs}</Text>
+      <Text style={pdfStyle.title}>Calculations</Text>
       <View style={pdfStyle.listItem}>
-        <Text style={pdfStyle.listItemLeft}>{text.damage.compensation}</Text>
+        <Text style={pdfStyle.listItemLeft}>Compensation</Text>
         <Text style={pdfStyle.listItemRight}>
           {result != Math.PI
             ? toOutString(Math.round(result * 100 + Number.EPSILON) / 100) +
@@ -86,7 +83,7 @@ const PDFDamage = ({
         </Text>
       </View>
       <View style={pdfStyle.listItem}>
-        <Text style={pdfStyle.listItemLeft}>{text.damage.percent}</Text>
+        <Text style={pdfStyle.listItemLeft}>Percentage coverage</Text>
         <Text
           style={[
             pdfStyle.listItemRight,
@@ -99,7 +96,7 @@ const PDFDamage = ({
         </Text>
       </View>
       <View style={pdfStyle.listItem}>
-        <Text style={pdfStyle.listItemLeft}>{text.damage.excess}</Text>
+        <Text style={pdfStyle.listItemLeft}>Excess</Text>
         <Text style={pdfStyle.listItemRight}>
           {own != Math.PI
             ? toOutString(Math.round(own * 100 + Number.EPSILON) / 100) + " CHF"
@@ -108,7 +105,7 @@ const PDFDamage = ({
       </View>
     </View>
     <View style={pdfStyle.subSection}>
-      <Text style={pdfStyle.title}>{text.damage.comment}</Text>
+      <Text style={pdfStyle.title}>Comment</Text>
       <View style={pdfStyle.listItem}>
         <Text>{message}</Text>
       </View>
