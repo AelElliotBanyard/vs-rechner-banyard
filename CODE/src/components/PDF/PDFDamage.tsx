@@ -45,7 +45,7 @@ let text = content.pdf.filter((p) => p.locale === locale)[0];
 const PDFDamage = ({
   vs,
   vw,
-  schaden,
+  damage,
   result,
   percent,
   own,
@@ -69,7 +69,7 @@ const PDFDamage = ({
       <View style={pdfStyle.listItem}>
         <Text style={pdfStyle.listItemLeft}>{text.damage.damage}</Text>
         <Text style={pdfStyle.listItemRight}>
-          {toOutString(Math.round(schaden * 100 + Number.EPSILON) / 100) +
+          {toOutString(Math.round(damage * 100 + Number.EPSILON) / 100) +
             " CHF"}
         </Text>
       </View>

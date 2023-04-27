@@ -67,7 +67,7 @@ export type VsSummePageParams = {
 export type PDFDamageParams = {
   vs: number;
   vw: number;
-  schaden: number;
+  damage: number;
   result: number;
   percent: number;
   own: number;
