@@ -61,6 +61,7 @@ export type VsSummePageParams = {
     vsNotEmpty: boolean;
     vw: number;
     vwNotEmpty: boolean;
+    printable: boolean;
   };
 };
 
