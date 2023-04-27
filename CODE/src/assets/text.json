@@ -610,6 +610,15 @@
         "vwSub": "(effektiven Wert Ihres Hausrats)",
         "vs": "Versicherungssumme",
         "vsSub": "(Wiederbeschaffungswert)"
+      },
+      "vsSumme": {
+        "yourList": "Ihre Inventarliste",
+        "total": "Total",
+        "result": "Ergebnis",
+        "vw": "Versicherungswert",
+        "vwSub": "(effektiven Wert Ihres Hausrats)",
+        "vs": "Versicherungssumme",
+        "vsSub": "(Wiederbeschaffungswert)"
       }
     },
     {
@@ -635,6 +644,15 @@
         "vwSub": "(effective value of your household goods)",
         "vs": "Insurance sum",
         "vsSub": "(replacement value)"
+      },
+      "vsSumme": {
+        "yourList": "Your list",
+        "total": "Total",
+        "result": "Result",
+        "vw": "Insured value",
+        "vwSub": "(effective value of your household goods)",
+        "vs": "Insurance sum",
+        "vsSub": "(replacement value)"
       }
     },
     {
@@ -654,6 +672,15 @@
         "yourData": "Vos données",
         "sqrMeters": "Mètres carrés",
         "flatRate": "Forfait",
+        "total": "Total",
+        "result": "Résultat",
+        "vw": "Valeur assurée",
+        "vwSub": "(valeur effective de vos biens ménagers)",
+        "vs": "Somme assurée",
+        "vsSub": "(valeur de remplacement)"
+      },
+      "vsSumme": {
+        "yourList": "Votre liste d'inventaire",
         "total": "Total",
         "result": "Résultat",
         "vw": "Valeur assurée",
