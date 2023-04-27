@@ -22,6 +22,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   let excess = Math.PI;
   let excessNotEmpty = false;
   let message = "";
+  let printable = false;
   if (query.damage) {
     damage = parseFloat(query.damage as string);
     damageNotEmpty = true;
@@ -49,6 +50,17 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   if (query.message) {
     message = query.message as string;
   }
+  if (
+    query.damage &&
+    query.vs &&
+    query.vw &&
+    query.compensation &&
+    query.percentage &&
+    query.excess &&
+    query.message
+  ) {
+    printable = true;
+  }
   return {
     props: {
       params: {
@@ -65,6 +77,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
         excess: excess,
         excessNotEmpty: excessNotEmpty,
         message: message,
+        printable: printable,
       },
     },
   };
@@ -99,8 +112,13 @@ const HausratSchaden = ({ params }: DamagePageParams) => {
   const [open, setOpen] = useState(false);
   const [shared, setShared] = useState(false);
 
+  const [printable, setPrintable] = useState(params.printable);
+  const [isClient, setIsClient] = useState(false);
+
+
   useEffect(() => {
     router.push(router.asPath.split("?")[0]);
+    setIsClient(true);
   }, []);
 
   const calc = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -125,6 +143,9 @@ const HausratSchaden = ({ params }: DamagePageParams) => {
       } else {
         setMessage(text.messages.perfect);
       }
+      setTimeout(() => {
+        setPrintable(true);
+      }, 5000);
     } else {
       if (vw == 0) {
         setError({
@@ -156,6 +177,7 @@ const HausratSchaden = ({ params }: DamagePageParams) => {
         });
       }
       setOpen(true);
+      setPrintable(false);
     }
   };
 
@@ -176,6 +198,7 @@ const HausratSchaden = ({ params }: DamagePageParams) => {
       percentage: false,
       excess: false,
     });
+    setPrintable(false);
     setTimeout(() => {
       setIsClear(false);
     }, 1000);
