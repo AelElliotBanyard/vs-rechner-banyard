@@ -111,7 +111,7 @@ const HausratVersicherungssumme = ({ params }: VsSummePageParams) => {
   useEffect(() => {
     router.push(router.asPath.split("?")[0]);
     setIsClient(true);
-  }, []);
+  }, [router]);
 
   const calcItems = () => {
     setItemsIsClear(false);

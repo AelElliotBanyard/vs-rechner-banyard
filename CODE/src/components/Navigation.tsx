@@ -3,6 +3,7 @@ import { FaHouseDamage, FaHouseUser } from "react-icons/fa";
 import { BsCalculatorFill, BsHouseFill } from "react-icons/bs";
 import { useRouter } from "next/router";
 import text from "../assets/text.json";
+import Image from "next/image";
 
 const Navigation = () => {
   const { locale, locales, asPath } = useRouter();
@@ -12,7 +13,7 @@ const Navigation = () => {
       <nav className="navigation">
         <div className="navLogo">
           <Link href="/">
-            <img
+            <Image
               src="/logo-big-dark-transparent.png"
               alt="Logo"
               className="logo"

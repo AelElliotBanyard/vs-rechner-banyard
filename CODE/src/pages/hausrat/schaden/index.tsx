@@ -121,7 +121,7 @@ const HausratSchaden = ({ params }: DamagePageParams) => {
   useEffect(() => {
     router.push(router.asPath.split("?")[0]);
     setIsClient(true);
-  }, []);
+  }, [router]);
 
   const calc = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
