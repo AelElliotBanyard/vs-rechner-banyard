@@ -80,12 +80,12 @@ const PDFBase = ({ children }: PDFBaseProps) => (
   <Document>
     <Page size="A4">
       <View style={pdfStyle.waterMark}>
-        <Image src="./Logo-big-light-transparent.png" />
+        <Image src="https://raw.githubusercontent.com/AelElliotBanyard/vs-rechner-banyard/main/CODE/public/Logo-big-light-transparent.png" />
       </View>
       <View style={pdfStyle.main}>
         <View style={pdfStyle.header}>
           <Image
-            src="./Logo-big-light-transparent.png"
+            src="https://raw.githubusercontent.com/AelElliotBanyard/vs-rechner-banyard/main/CODE/public/Logo-big-light-transparent.png"
             style={pdfStyle.headerImage}
           />
           <View style={pdfStyle.headerAddress}>
