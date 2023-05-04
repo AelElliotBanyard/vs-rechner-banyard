@@ -1,0 +1,20 @@
+# cloud-config
+
+# update all packages
+package_upgrade: true
+
+# update all packages
+package_update: true
+
+# install packages
+packages:
+  - nodejs
+  - npm
+
+# run commands
+runcmd:
+  - sudo git clone https://github.com/AelElliotBanyard/vs-rechner-banyard .
+  - cd CODE
+  - sudo npm ci
+  - sudo npm run build
+  - sudo npm run start
