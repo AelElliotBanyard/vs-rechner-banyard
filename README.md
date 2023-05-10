@@ -19,7 +19,8 @@ This is the GitHub repo for my Home insurance coverage and insurance sum calcula
 The Repo is split into multiple folders.
 
 1. CODE
-2. DOCS
+2. DEPLOY
+3. DOCS
 
 Following each folder is explained and what you can find in it.
 
@@ -28,6 +29,12 @@ Following each folder is explained and what you can find in it.
 This one is pretty straight forward. In the CODE folder you can find... the source code for the Web App.
 
 How to run the App and what to do if you want to expand the Web App can be found in the README in the directory CODE.
+
+### DEPLOY
+
+This folder contains a Dockerfile and a cloud-init file. More is described in the folders README.
+
+
 
 ### DOCS
 
