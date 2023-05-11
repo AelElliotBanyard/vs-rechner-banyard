@@ -21,7 +21,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          source: ./DEPLOY/Dockerfile
+          source: DEPLOY/Dockerfile
           target: /home/ubuntu/Dockerfile
 
       - name: Build and Push Dockerfile from server
