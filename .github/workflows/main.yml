@@ -15,16 +15,25 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@master
 
-      - name: Log in to Docker Hub
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      - name: Push Dockerfile to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          source: ./DEPLOY/Dockerfile
+          target: /home/ubuntu/Dockerfile
 
-      - name: Build and push Docker image
-        run: |
-          docker build -t elliotdragon/insurance-app --platform linux/arm64/v8 ./DEPLOY
-          docker push elliotdragon/insurance-app
+      - name: Build and Push Dockerfile from server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: |
+            cd /home/ubuntu
+            sudo docker build -t elliotdragon/insurance-app .
+            sudo docker push elliotdragon/insurance-app
 
       - name: Stop and delete Container on server
         uses: appleboy/ssh-action@v0.1.10
