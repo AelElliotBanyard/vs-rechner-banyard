@@ -22,7 +22,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           source: DEPLOY/Dockerfile
-          target: /home/ubuntu/Dockerfile
+          target: /home/ubuntu/
 
       - name: Build and Push Dockerfile from server
         uses: appleboy/ssh-action@master
